@@ -1,6 +1,8 @@
 ## Stock Portfolio Visualizer
 
-This app demonstrates the reactive side of Svelte, the newest framework that combines the best of both React and Vue. The app allows the user to visualize their portfolio. Data for the portfolio is accessed from Yahoo Finance using a serverless API deployed on Google Cloud Functions. The repo for the API can be accessed here: https://github.com/jawadshuaib/Yahoo-Finance-API-for-Serverless-Computing
+This app uses a Word2Vec machine learning model to find similar verses in the Qur'an. The app pulls the most relevant verses from an API hosted on a separate server. The front-end is built in svelte. The API is exposed using PHP. Data is ranked and stored in a MySQL database with appropriate index to optimize for speed since there are millions of rows of data to sift through.
+
+Feature engineering was used to remove stop words. NLTK library was used to stem and tokenize sentences to reduce overall sample size for more optimized and relevant results. This feature engineering was done using Python.
 
 ## Developing
 
