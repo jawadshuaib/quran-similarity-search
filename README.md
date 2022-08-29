@@ -1,4 +1,4 @@
-## Stock Portfolio Visualizer
+## Discover Similar Verses in the Quran
 
 This app uses a Word2Vec machine learning model to find similar verses in the Qur'an. The app pulls the most relevant verses from an API hosted on a separate server. The front-end is built in svelte. The API is exposed using PHP. Data is ranked and stored in a MySQL database with appropriate index to optimize for speed since there are millions of rows of data to sift through.
 
