@@ -43,16 +43,11 @@
 	// API
 	import surahInfo from '../../api/fetch-surah-info';
 	import similarVerses from '../../api/fetch-similar-verses';
-
 	// Common Scripts
+	import { decodeHtml, saveSearchToLocalStorage } from '../../scripts/common-scripts';
 	import { defaultValues } from '../../scripts/env-variables';
-
 	// Components
 	import VersesContainer from '../../components/VersesContainer.svelte';
-
-	// Scripts
-	import { decodeHtml } from '../../scripts/common-scripts';
-
 	// Stores
 	import { setSearched } from '../../stores/search-stores';
 	import { setSimilarVerseStore } from '../../stores/similar-verse-stores';
@@ -100,6 +95,9 @@
 					// Save surah info in the store
 					surah.ayaNumber = ayaNumber;
 					setSearched(surah);
+					// Save search to local storage so the user gets this page when the load this page
+					// next time
+					saveSearchToLocalStorage(`${surahNumber}:${ayaNumber}`);
 
 					similarVerses(options).then((verse) => {
 						// Update store with similar verses
@@ -119,7 +117,12 @@
 	{:then surah}
 		<!-- Triggered when incorrect surah or aya number provided -->
 		{#if surah.hasOwnProperty('error')}
-			{surah.error}
+			<div
+				class="p-4 mb-4 text-xl text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 text-center mt-5"
+				role="alert"
+			>
+				{surah.error}
+			</div>
 		{:else}
 			<!-- surah: {JSON.stringify(surah)} -->
 			<h1 class="sm:text-3xl text-2xl text-center mt-8 uppercase">
@@ -129,6 +132,12 @@
 			<VersesContainer />
 		{/if}
 	{:catch error}
-		<p>Error: {error}</p>
+		<div
+			class="p-4 mb-4 text-xl text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 text-center mt-5"
+			role="alert"
+		>
+			<span class="font-medium">Error</span>
+			{error}
+		</div>
 	{/await}
 </div>

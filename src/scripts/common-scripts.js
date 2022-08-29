@@ -1,18 +1,10 @@
-// const generateUniqueId = (pattern='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx') => {
-//   return pattern.replace(/[xy]/g, (c) => {
-//     const r = (Math.random() * 16) | 0,
-//       v = c == 'x' ? r : (r & 0x3) | 0x8;
-//     return v.toString(16);
-//   });
-// };
+function getSearchFromLocalStorage() {
+  return localStorage.getItem('search');
+}
 
-// function getUserIdFromLocalStorage() {
-//   return localStorage.getItem('userId');
-// }
-
-// function saveUserIdToLocalStorage(userId) {
-// 	localStorage.setItem('userId', userId);
-// }
+function saveSearchToLocalStorage(search) {
+	localStorage.setItem('search', search);
+}
 
 function decodeHtml(html) {
   var txt = document.createElement('textarea');
@@ -29,5 +21,4 @@ function isNumberKey(str) {
   return true;
 }
 
-// export { generateUniqueId, getUserIdFromLocalStorage, saveUserIdToLocalStorage };
-export { decodeHtml, isNumberKey };
+export { getSearchFromLocalStorage, saveSearchToLocalStorage, decodeHtml, isNumberKey };

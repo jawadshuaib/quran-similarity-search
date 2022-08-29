@@ -1,22 +1,27 @@
 <script>
+	// Internal
+	import { browser } from '$app/env';
+	// API
+	import surahInfo from '../api/fetch-surah-info';
+	import similarVerses from '../api/fetch-similar-verses';
+	// Common Scripts
+	import { defaultValues } from '../scripts/env-variables';
+	import { getSearchFromLocalStorage, saveSearchToLocalStorage } from '../scripts/common-scripts';
 	// Scripts
 	import { isNumberKey } from '../scripts/common-scripts';
 	// Stores
 	import { setSearched } from '../stores/search-stores';
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
 
-	// Common Scripts
-	import { defaultValues } from '../scripts/env-variables';
-
-	// API
-	import surahInfo from '../api/fetch-surah-info';
-	import similarVerses from '../api/fetch-similar-verses';
-
-	let search = defaultValues.search;
 	let error = false;
 
+	// Get the search from local storage so we can start off the user
+	// with their previous state
+	let savedSearch = browser ? getSearchFromLocalStorage() : null;
+	let search = savedSearch === null ? defaultValues.search : savedSearch;
+
 	// Execute handleChange() when user visits the page
-	if (search === defaultValues.search) {
+	if (search === defaultValues.search || search === savedSearch) {
 		handleChange({ key: 'Enter' });
 	}
 
@@ -66,6 +71,8 @@
 			surah.ayaNumber = ayaNumber;
 			// Update store with surah info
 			setSearched(surah);
+			// Save search to local storage
+			saveSearchToLocalStorage(search);
 		});
 
 		if (e.key === 'Enter' && !error) {
