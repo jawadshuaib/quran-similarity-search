@@ -6,7 +6,10 @@
 	import similarVerses from '../api/fetch-similar-verses';
 	// Common Scripts
 	import { defaultValues } from '../scripts/env-variables';
-	import { getSearchFromLocalStorage, saveSearchToLocalStorage } from '../scripts/common-scripts';
+	import {
+		getSearchFromLocalStorage,
+		saveSearchToLocalStorage
+	} from '../scripts/local-storage-scripts';
 	// Scripts
 	import { isNumberKey } from '../scripts/common-scripts';
 	// Stores

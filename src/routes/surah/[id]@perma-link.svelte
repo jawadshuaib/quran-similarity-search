@@ -44,8 +44,9 @@
 	import surahInfo from '../../api/fetch-surah-info';
 	import similarVerses from '../../api/fetch-similar-verses';
 	// Common Scripts
-	import { decodeHtml, saveSearchToLocalStorage } from '../../scripts/common-scripts';
+	import { decodeHtml } from '../../scripts/common-scripts';
 	import { defaultValues } from '../../scripts/env-variables';
+	import { saveSearchToLocalStorage } from '../../scripts/local-storage-scripts';
 	// Components
 	import VersesContainer from '../../components/VersesContainer.svelte';
 	// Stores
