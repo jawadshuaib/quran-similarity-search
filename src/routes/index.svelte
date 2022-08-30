@@ -1,10 +1,8 @@
 <script>
 	// Scripts
 	import { decodeHtml } from '../scripts/common-scripts';
-
 	// Stores
 	import { searched } from '../stores/search-stores';
-
 	// Components
 	import Search from '../components/Search.svelte';
 	import VersesContainer from '../components/VersesContainer.svelte';

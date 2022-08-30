@@ -117,7 +117,7 @@
 			</a>
 		</div>
 	</div>
-{:else if payloadType === 'similar'}
+{:else if payloadType === 'similar' || payloadType === 'saved'}
 	<div
 		class="similar-verse grid grid-cols-12 py-4 my-2 border-2 border-slate-50 rounded items-center text-xl text-slate-800 opacity-{opacity} hover:border-slate-200"
 	>

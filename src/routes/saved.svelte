@@ -1,21 +1,75 @@
 <script>
 	// Internal
 	import { browser } from '$app/env';
-
+	// API
+	import verseInfo from '../api/fetch-verse-info';
+	// Common Scripts
 	import { areThereAnySavedVerses, getSavedVerses } from '../scripts/local-storage-scripts';
+	// Components
+	import Verse from '../components/Verse.svelte';
 
 	let savedVerses = '';
+	let error = false;
+	let verses = [];
+	let promise;
+
+	let promises = [];
 	if (browser && areThereAnySavedVerses()) {
-		savedVerses = JSON.parse(`[${JSON.stringify(getSavedVerses())}]`);
-		console.log(savedVerses);
+		// Get an array of all the verses saved
+		savedVerses = getSavedVerses().split(',');
+
+		let i = 0;
+		savedVerses.forEach((verse) => {
+			let verseData = verse.split(':');
+			let surahNumber = parseInt(verseData[0]);
+			let ayaNumber = parseInt(verseData[1]);
+
+			// Create an array of promises so we may resolve them all at once
+			promises[i] = verseInfo(surahNumber, ayaNumber);
+			i++;
+		});
+
+		// Resolve all promises at once
+		promise = Promise.all(promises)
+			.then((v) => {
+				v = v.flat();
+
+				v.map((verse) => {
+					const formatted = {
+						surah_number: verse.surahNumber,
+						aya_number: verse.ayaNumber,
+						quranic_text: verse.arabicText,
+						translation: verse.englishText
+					};
+
+					verses.push(formatted);
+				});
+			})
+			.catch((error) => {
+				console.log(`Problem resolving all the errors`, error);
+			});
 	}
 </script>
 
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Saved</h1>
 <div class="gap-2 py-2 text-center">
-	{#if browser && areThereAnySavedVerses()}
-		<p class="md:text-xl">Here is a list of the verses you saved: {savedVerses}</p>
-	{/if}
+	<!-- Loading API... -->
+	{#await promise}
+		<div
+			class="p-12 bg-gray-300 text-gray-100 text-center rounded-md shadow-sm hover:shadow-md flex flex-col items-center"
+		>
+			Loading...
+		</div>
+		<!-- Get each saved verse -->
+	{:then}
+		{#each verses as verse}
+			<Verse {verse} payloadType="saved" opacity="100" />
+		{/each}
+	{:catch error}
+		<p>Error: {error}</p>
+	{/await}
+
+	<!-- Notice if there aren't any saved verses -->
 	{#if browser && !areThereAnySavedVerses()}
 		<div
 			class="p-4 mb-4 text-xl text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800 text-center mt-5"
