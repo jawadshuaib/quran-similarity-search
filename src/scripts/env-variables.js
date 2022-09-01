@@ -1,8 +1,8 @@
 const envVariables = {  
-  isDeveloperMode: true,
+  isDeveloperMode: false,
   corsAnywhereProxy: 'https://glacial-brushlands-90091.herokuapp.com/',
   isDeveloperEndPoint: 'http://localhost/quran/api',
-  isProductionEndPoint: '' 
+  isProductionEndPoint: 'https://quran-similarity-score.000webhostapp.com/api' 
 };
 
 const defaultValues = {
