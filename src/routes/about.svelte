@@ -26,7 +26,7 @@
 			Svelte JS and Tailwind CSS.
 		</p>
 		<p>
-			Feel free to reach out to me: <a
+			Feel free to reach out: <a
 				class="underline decoration-orange-400 decoration-wavy "
 				href="https://j4wad.com">Jawad Shuaib</a
 			>.
