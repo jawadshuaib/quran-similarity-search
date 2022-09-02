@@ -50,11 +50,10 @@
 	// Components
 	import VersesContainer from '../../components/VersesContainer.svelte';
 	// Stores
+	import { setLoading } from '../../stores/loading-stores';
 	import { setSearched } from '../../stores/search-stores';
 	import { setSimilarVerseStore } from '../../stores/similar-verse-stores';
 	import { urlParams } from '../../stores/url-params-stores';
-
-	// export let data;
 
 	let surahNumber = 0,
 		ayaNumber = 0,
@@ -75,6 +74,7 @@
 		 */
 		// We use surahInfo promise to check if this particular surah and aya exists
 		if (surahNumber > 0 && ayaNumber > 0) {
+			setLoading(true);
 			promise = surahInfo(surahNumber).then((surah) => {
 				let error = false;
 				// Make sure the surah number and aya number are valid
@@ -103,9 +103,11 @@
 					similarVerses(options).then((verse) => {
 						// Update store with similar verses
 						setSimilarVerseStore(verse.info, verse.similar);
+
+						// API has stopped loading
+						setLoading(false);
 					});
 				}
-
 				return surah;
 			});
 		}
@@ -114,7 +116,7 @@
 
 <div class="text-center">
 	{#await promise}
-		Loading...
+		<div class="text-center animate-bounce text-3xl">....</div>
 	{:then surah}
 		<!-- Triggered when incorrect surah or aya number provided -->
 		{#if surah.hasOwnProperty('error')}

@@ -15,6 +15,7 @@
 	// Stores
 	import { setSearched } from '../stores/search-stores';
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
+	import { setLoading } from '../stores/loading-stores';
 
 	let error = false;
 
@@ -79,6 +80,9 @@
 		});
 
 		if (e.key === 'Enter' && !error) {
+			// API is loading
+			setLoading(true);
+
 			if (readyToSearch) {
 				const options = {
 					translationId: defaultValues.translationId,
@@ -91,6 +95,8 @@
 				similarVerses(options).then((verse) => {
 					// Update store with similar verses
 					setSimilarVerseStore(verse.info, verse.similar);
+
+					setLoading(false);
 				});
 			}
 		}

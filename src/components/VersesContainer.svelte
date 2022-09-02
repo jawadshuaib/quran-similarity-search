@@ -2,7 +2,7 @@
 	// Stores
 	import { is_empty } from 'svelte/internal';
 	import { similarVerseStore } from '../stores/similar-verse-stores';
-
+	import { loading } from '../stores/loading-stores';
 	// Components
 	import Verse from './Verse.svelte';
 
@@ -10,6 +10,8 @@
 	let similarVerses = [];
 	let searchedFoundSimilarVerses = false;
 	let showBismillah = true;
+
+	$: apiIsLoading = true;
 
 	similarVerseStore.subscribe((verses) => {
 		// Check if a valid search happened
@@ -36,6 +38,11 @@
 				searchedFoundSimilarVerses = true;
 			}
 		}
+	});
+
+	// Show '...' until API is loading
+	loading.subscribe((status) => {
+		apiIsLoading = status;
 	});
 
 	// Calculate opacity for similar verses
@@ -86,4 +93,8 @@
 			No Similar Verses Found
 		</h4>
 	{/if}
+{/if}
+
+{#if apiIsLoading}
+	<div class="text-center animate-bounce text-3xl">...</div>
 {/if}

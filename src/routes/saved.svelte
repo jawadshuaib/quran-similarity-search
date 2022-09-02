@@ -55,11 +55,7 @@
 <div class="gap-2 py-2 text-center">
 	<!-- Loading API... -->
 	{#await promise}
-		<div
-			class="p-12 bg-gray-300 text-gray-100 text-center rounded-md shadow-sm hover:shadow-md flex flex-col items-center"
-		>
-			Loading...
-		</div>
+		<div class="text-center animate-bounce text-3xl">...</div>
 		<!-- Get each saved verse -->
 	{:then}
 		{#each verses as verse}
