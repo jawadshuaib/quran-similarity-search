@@ -13,11 +13,14 @@
 			are best understood in light of its own style and grammar. -->
 		</p>
 
-		<p class="mb-5">
+		<p class="">
 			I built this web application to help contextualize the various verses of the Qur'an. It can
 			hopefully help others find linguistically similar verses in the Qur'an to help form a more
 			holistic understanding of its message and meaning.
 		</p>
+		<div class="max-w-screen-lg">
+			<img src="screenshot-3.png" alt="Website architecture" class="mx-auto" />
+		</div>
 		<p class="mb-5">
 			I used a machine learning model known an Word2Vec to find similar verses. A cosine similarity
 			algorithm determed the distance between each verse. This permutation resulted in many million
@@ -26,9 +29,12 @@
 			Svelte JS and Tailwind CSS.
 		</p>
 		<p>
-			Feel free to reach out: <a
-				class="underline decoration-orange-400 decoration-wavy "
-				href="https://j4wad.com">Jawad Shuaib</a
+			Front-end code is available on <a
+				href="https://github.com/jawadshuaib/quran-similarity-search"
+				class="underline hover:decoration-orange-400">GitHub</a
+			>. Feel free to reach out:
+			<a class="underline decoration-orange-400 decoration-wavy " href="https://j4wad.com"
+				>Jawad Shuaib</a
 			>.
 		</p>
 	</div>

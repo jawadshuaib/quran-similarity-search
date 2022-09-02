@@ -12,6 +12,8 @@ Data is ranked and stored in a MySQL database with appropriate index to optimize
 
 Feature engineering was used to remove stop words. NLTK library was used to stem and tokenize sentences to reduce overall sample size for more optimized and relevant results. This feature engineering was done using Python.
 
+![Alt text](static/screenshot-3.png?raw=true 'Flowchart of the architecture')
+
 ## Developing
 
 Execute the code using the following commands:
