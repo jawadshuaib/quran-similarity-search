@@ -116,7 +116,7 @@
 
 <div class="text-center">
 	{#await promise}
-		<div class="text-center animate-bounce text-3xl">....</div>
+		<div class="text-center animate-bounce text-3xl">...</div>
 	{:then surah}
 		<!-- Triggered when incorrect surah or aya number provided -->
 		{#if surah.hasOwnProperty('error')}
