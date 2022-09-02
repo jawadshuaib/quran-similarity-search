@@ -7,7 +7,7 @@
 			whole with many intermingling themes that repeat throughout its verses. This is why no single
 			verse can be read on its own without understanding its broader context. Due to the nature of
 			its composition, this context can be spread across multiple chapters rather than within a
-			<!-- single place. Another challenge with reading the Qur'an is mistranslation - not only from
+			single place. <!-- Another challenge with reading the Qur'an is mistranslation - not only from
 			Arabic to English but also from Quranic Arabic to modern Arabic. Many words common in Arabic
 			today have a meaning different from the meaning in the Qur'an. Therefore, words in the Qur'an
 			are best understood in light of its own style and grammar. -->
