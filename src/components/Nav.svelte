@@ -9,9 +9,21 @@
 </script>
 
 <nav class="flex justify-center w-full">
-	<a sveltekit:prefetch href="/" class="mx-4 text-lg hover:underline decoration-2">Search</a>
+	<a
+		sveltekit:prefetch
+		href="/"
+		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Search</a
+	>
 	{#if showSavedNavItem}
-		<a sveltekit:prefetch href="/saved" class="mx-4 text-lg hover:underline decoration-2">Saved</a>
+		<a
+			sveltekit:prefetch
+			href="/saved"
+			class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Saved</a
+		>
 	{/if}
-	<a sveltekit:prefetch href="/about" class="mx-4 text-lg hover:underline decoration-2">About</a>
+	<a
+		sveltekit:prefetch
+		href="/about"
+		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">About</a
+	>
 </nav>

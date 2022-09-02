@@ -8,8 +8,8 @@
 			verse can be read on its own without understanding its broader context. Due to the nature of
 			its composition, this context can be spread across multiple chapters rather than within a
 			single place. Another challenge with reading the Qur'an is mistranslation - not only from
-			Arabic to English but also from Quranic Arabic to Modern Arabic. Many words used in Modern
-			Arabic have a meaning different from the meaning in the Qur'an. Therefore, words in the Qur'an
+			Arabic to English but also from Quranic Arabic to modern Arabic. Many words common in Arabic
+			today have a meaning different from the meaning in the Qur'an. Therefore, words in the Qur'an
 			are best understood in light of its own style and grammar.
 		</p>
 
@@ -26,8 +26,8 @@
 			Svelte JS and Tailwind CSS.
 		</p>
 		<p>
-			Feel free to reach out to me if you have any questions: <a
-				class="underline hover:text-green-500"
+			Feel free to reach out to me: <a
+				class="underline decoration-orange-400 decoration-wavy "
 				href="https://j4wad.com">Jawad Shuaib</a
 			>.
 		</p>

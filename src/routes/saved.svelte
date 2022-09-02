@@ -9,7 +9,6 @@
 	import Verse from '../components/Verse.svelte';
 
 	let savedVerses = '';
-	let error = false;
 	let verses = [];
 	let promise;
 
