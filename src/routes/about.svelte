@@ -25,8 +25,9 @@
 			I used a machine learning model known an Word2Vec to find similar verses. A cosine similarity
 			algorithm determed the distance between each verse. This permutation resulted in many million
 			rows of data, which was then stemmed for reducing dimensionality. The final dataset is
-			readable through an API. The web application accesses this API using a front-end built in
-			Svelte JS and Tailwind CSS.
+			readable through an API. A cache system was added to enhance load times and reduce expensive
+			calls to the database. The web application accesses this API using a front-end built in Svelte
+			JS and Tailwind CSS.
 		</p>
 		<p>
 			Front-end code is available on <a
