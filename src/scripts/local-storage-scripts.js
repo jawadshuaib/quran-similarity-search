@@ -57,4 +57,14 @@ function saveSearchToLocalStorage(search) {
 	localStorage.setItem('search', search);
 }
 
-export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage };
+// This will get the last searched surah:aya from the local storage
+function getTranslationMethodFromLocalStorage() {
+  return parseInt(localStorage.getItem('translation_method'));
+}
+
+// This will set the last searched surah:aya in local storage
+function saveTranslationMethodToLocalStorage(id) {
+	localStorage.setItem('translation_method', id);
+}
+
+export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, getTranslationMethodFromLocalStorage, saveTranslationMethodToLocalStorage };

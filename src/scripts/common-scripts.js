@@ -13,5 +13,44 @@ function isNumberKey(str) {
   return true;
 }
 
+// Default translation requested is 456. This is the id for the itani translation. Another option is 789 when requesting the Arabic lemmatized method.
+// Default method for finding similar verses. Options: 'formatted', 'tokenized', 'without_stop_words', 'arabic_lemmatized', 'arabic_lemmatized_without_stop_words' or leave blank for default.  
+const translations = {
+  english: {    
+    translationId: 456,
+    title: 'English translation',
+    desc: 'In this method, the English translation of the verses are compared with each other.',        
+    method: 'without_stop_words'
+  },
+  arabic: {
+    translationId: 789,
+    title: 'Arabic text',
+    desc: 'In this method, the verses are compared with each other based on the original language.',            
+    method: 'arabic_lemmatized',
+    get lemmatized () {      
+      return {         
+        translationId: this.translationId, 
+        title: this.title,
+        desc: this.desc,        
+        method: this.method 
+      }
+    },
+    get lemmatized_without_stop_words () {
+      return {        
+        translationId: this.translationId, 
+        title: this.title + ' ' + '- <span class="underline">excluding</span> stop words',
+        desc: this.desc + ' ' + 'However, we exclude the stop words (i.e conjunctions are removed) when making the comparison.',                
+        method: 'arabic_lemmatized_without_stop_words'
+      }
+    }
+  }  
+}
+
+const translationMethodsAvailable = [
+  translations.english,
+  translations.arabic.lemmatized,
+  translations.arabic.lemmatized_without_stop_words
+]
+
 // export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, decodeHtml, isNumberKey };
-export { decodeHtml, isNumberKey };
+export { decodeHtml, isNumberKey, translationMethodsAvailable };

@@ -8,14 +8,15 @@
 	import { defaultValues } from '../scripts/env-variables';
 	import {
 		getSearchFromLocalStorage,
-		saveSearchToLocalStorage
+		saveSearchToLocalStorage,
+		getTranslationMethodFromLocalStorage
 	} from '../scripts/local-storage-scripts';
 	// Scripts
-	import { isNumberKey } from '../scripts/common-scripts';
+	import { isNumberKey, translationMethodsAvailable } from '../scripts/common-scripts';
 	// Stores
+	import { setLoading } from '../stores/loading-stores';
 	import { setSearched } from '../stores/search-stores';
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
-	import { setLoading } from '../stores/loading-stores';
 
 	let error = false;
 
@@ -23,6 +24,11 @@
 	// with their previous state
 	let savedSearch = browser ? getSearchFromLocalStorage() : null;
 	let search = savedSearch === null ? defaultValues.search : savedSearch;
+
+	// This translationMethod is an index like 0, 1, 2
+	let savedTranslationMethod = browser ? getTranslationMethodFromLocalStorage() : null;
+	let translationMethod =
+		savedTranslationMethod === null ? defaultValues.translationMethod : savedTranslationMethod;
 
 	// Execute handleChange() when user visits the page
 	if (search === defaultValues.search || search === savedSearch) {
@@ -85,11 +91,11 @@
 
 			if (readyToSearch) {
 				const options = {
-					translationId: defaultValues.translationId,
+					translationId: translationMethodsAvailable[translationMethod].translationId,
 					surahNumber: surahNumber,
 					ayaNumber: ayaNumber,
 					results: defaultValues.results,
-					method: defaultValues.method
+					method: translationMethodsAvailable[translationMethod].method
 				};
 
 				similarVerses(options).then((verse) => {

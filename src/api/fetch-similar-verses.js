@@ -28,8 +28,7 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 
 const similarVerses = async (options) => { 
 
-  const url = `${baseURL}/similar.php?translation=${options.translationId}&surah_number=${options.surahNumber}&aya_number=${options.ayaNumber}&results=${options.results}&method=${options.method}`;  
-  console.log (url);
+  const url = `${baseURL}/similar.php?translation=${options.translationId}&surah_number=${options.surahNumber}&aya_number=${options.ayaNumber}&results=${options.results}&method=${options.method}`;    
 	
   try {
     const response = await fetch(url);
