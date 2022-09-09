@@ -33,6 +33,9 @@
 	let translationMethod;
 	settingsStored.translationMethod.subscribe((value) => {
 		translationMethod = value;
+		if (search != '') {
+			handleChange({ key: 'Enter' });
+		}
 	});
 
 	// Execute handleChange() when user visits the page

@@ -19,7 +19,7 @@
 		<slot />
 	</Transition>
 </div>
-{#if $page.url.pathname !== '/settings'}
+{#if $page.url.pathname === '/'}
 	<SettingsBar />
 {/if}
 
