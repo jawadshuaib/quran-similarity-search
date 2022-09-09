@@ -68,57 +68,62 @@
 	// Get index of the translation method selected
 	settingsStored.translationMethod.subscribe((value) => {
 		translationMethod = value;
+		findVerses();
 	});
 
-	urlParams.subscribe((params) => {
-		surahNumber = params.surahNumber;
-		ayaNumber = params.ayaNumber;
+	findVerses();
 
-		/**
-		 * Get surah info
-		 * @param {int} surahNumber
-		 * @return {Promise} { surah_number: 1, ayat_count: 7, arabic_name: "Al-Faatiha",	english_name: "The Opening", type: "Meccan" }
-		 */
-		// We use surahInfo promise to check if this particular surah and aya exists
-		if (surahNumber > 0 && ayaNumber > 0) {
-			setLoading(true);
-			promise = surahInfo(surahNumber).then((surah) => {
-				let error = false;
-				// Make sure the surah number and aya number are valid
-				if (surah.hasOwnProperty('error') || ayaNumber > parseInt(surah.ayatCount)) {
-					error = true;
-				}
+	function findVerses() {
+		urlParams.subscribe((params) => {
+			surahNumber = params.surahNumber;
+			ayaNumber = params.ayaNumber;
 
-				// If surah and aya exist then find similar verses
-				// This will provide the relevant information to the VersesContainer through the stores
-				if (!error) {
-					const options = {
-						translationId: translationMethodsAvailable[translationMethod].translationId,
-						surahNumber: surahNumber,
-						ayaNumber: ayaNumber,
-						results: defaultValues.results,
-						method: translationMethodsAvailable[translationMethod].method
-					};
+			/**
+			 * Get surah info
+			 * @param {int} surahNumber
+			 * @return {Promise} { surah_number: 1, ayat_count: 7, arabic_name: "Al-Faatiha",	english_name: "The Opening", type: "Meccan" }
+			 */
+			// We use surahInfo promise to check if this particular surah and aya exists
+			if (surahNumber > 0 && ayaNumber > 0) {
+				setLoading(true);
+				promise = surahInfo(surahNumber).then((surah) => {
+					let error = false;
+					// Make sure the surah number and aya number are valid
+					if (surah.hasOwnProperty('error') || ayaNumber > parseInt(surah.ayatCount)) {
+						error = true;
+					}
 
-					// Save surah info in the store
-					surah.ayaNumber = ayaNumber;
-					setSearched(surah);
-					// Save search to local storage so the user gets this page when the load this page
-					// next time
-					saveSearchToLocalStorage(`${surahNumber}:${ayaNumber}`);
+					// If surah and aya exist then find similar verses
+					// This will provide the relevant information to the VersesContainer through the stores
+					if (!error) {
+						const options = {
+							translationId: translationMethodsAvailable[translationMethod].translationId,
+							surahNumber: surahNumber,
+							ayaNumber: ayaNumber,
+							results: defaultValues.results,
+							method: translationMethodsAvailable[translationMethod].method
+						};
 
-					similarVerses(options).then((verse) => {
-						// Update store with similar verses
-						setSimilarVerseStore(verse.info, verse.similar);
+						// Save surah info in the store
+						surah.ayaNumber = ayaNumber;
+						setSearched(surah);
+						// Save search to local storage so the user gets this page when the load this page
+						// next time
+						saveSearchToLocalStorage(`${surahNumber}:${ayaNumber}`);
 
-						// API has stopped loading
-						setLoading(false);
-					});
-				}
-				return surah;
-			});
-		}
-	});
+						similarVerses(options).then((verse) => {
+							// Update store with similar verses
+							setSimilarVerseStore(verse.info, verse.similar);
+
+							// API has stopped loading
+							setLoading(false);
+						});
+					}
+					return surah;
+				});
+			}
+		});
+	}
 </script>
 
 <div class="text-center">
