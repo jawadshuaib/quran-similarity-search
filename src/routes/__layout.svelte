@@ -19,9 +19,9 @@
 		<slot />
 	</Transition>
 </div>
-<div class="p-2 max-w-6xl mx-auto text-center">
+{#if $page.url.pathname !== '/settings'}
 	<SettingsBar />
-</div>
+{/if}
 
 <style>
 	@tailwind base;

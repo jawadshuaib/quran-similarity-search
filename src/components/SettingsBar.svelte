@@ -21,7 +21,7 @@
 <!-- if -->
 <!-- {#if selected === 0} -->
 {#if selected !== null}
-	<div class="text-slate-400">
+	<div class="text-slate-400 p-2 max-w-6xl mx-auto text-center">
 		We are currently using <span class="font-medium"
 			>{@html translationMethodsAvailable[selected].title}</span
 		>

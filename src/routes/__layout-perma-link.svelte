@@ -2,6 +2,7 @@
 	// Internal
 	import { page } from '$app/stores';
 	// Components
+	import SettingsBar from '../components/SettingsBar.svelte';
 	import Nav from '../components/Nav.svelte';
 	import Transition from '../components/Transition.svelte';
 </script>
@@ -18,6 +19,9 @@
 		<slot />
 	</Transition>
 </div>
+{#if $page.url.pathname !== '/settings'}
+	<SettingsBar />
+{/if}
 
 <style>
 	@tailwind base;

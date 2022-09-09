@@ -6,10 +6,7 @@ const envVariables = {
 };
 
 
-const defaultValues = {
-  translationMethod: 0,
-  // translationId: translation.arabic.translationId, 
-  // method: translation.arabic.lemmatized_without_stop_words.method,
+const defaultValues = {  
   results: 5, // Default number of results requested from the API
   search: '1:1' // Default surah number and aya number when the app loads
 };
