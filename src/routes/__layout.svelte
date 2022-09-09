@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 
 	// Components
+	import SettingsBar from '../components/SettingsBar.svelte';
 	import Nav from '../components/Nav.svelte';
 	import Transition from '../components/Transition.svelte';
 </script>
@@ -17,6 +18,9 @@
 	<Transition url={$page.url}>
 		<slot />
 	</Transition>
+</div>
+<div class="p-2 max-w-6xl mx-auto text-center">
+	<SettingsBar />
 </div>
 
 <style>

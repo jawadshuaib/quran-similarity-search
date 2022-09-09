@@ -22,7 +22,7 @@
 			<img src="screenshot-3.png" alt="Website architecture" class="mx-auto" />
 		</div>
 		<p class="mb-5">
-			I used a machine learning model known an Word2Vec to find similar verses. A cosine similarity
+			I used a machine learning model known as Word2Vec to find similar verses. A cosine similarity
 			algorithm determed the distance between each verse. This permutation resulted in many million
 			rows of data, which was then stemmed for reducing dimensionality. The final dataset is
 			readable through an API. A cache system was added to enhance load times and reduce expensive
