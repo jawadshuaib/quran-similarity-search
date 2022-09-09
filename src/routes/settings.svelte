@@ -1,14 +1,12 @@
 <script>
-	// Internal
-	// import { browser } from '$app/env';
+	// Transitions
+	import { fade } from 'svelte/transition';
 	// Common Scripts
 	import { translationMethodsAvailable } from '../scripts/common-scripts';
-	// import {
-	// 	saveTranslationMethodToLocalStorage,
-	// 	getTranslationMethodFromLocalStorage
-	// } from '../scripts/local-storage-scripts';
 	// Stores
 	import { settingsStored } from '../stores/settings-stores';
+
+	let saved = false;
 
 	// $: currentTranslationMethod = browser ? getTranslationMethodFromLocalStorage() : null;
 	let currentTranslationMethod;
@@ -31,6 +29,11 @@
 		// currentTranslationMethod = option.id;
 
 		settingsStored.translationMethod.set(option.id);
+
+		saved = true;
+		setTimeout(function () {
+			saved = false;
+		}, 2000);
 	};
 </script>
 
@@ -79,3 +82,8 @@
 		{/if}
 	</div>
 </div>
+{#if saved}
+	<div in:fade class="text-orange-600 text-center">*** saved ***</div>
+{:else}
+	<div>&nbsp;</div>
+{/if}
