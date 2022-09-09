@@ -53,4 +53,4 @@ const translationMethodsAvailable = [
 ]
 
 // export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, decodeHtml, isNumberKey };
-export { decodeHtml, isNumberKey, translationMethodsAvailable };
+export { decodeHtml, isNumberKey, translationMethodsAvailable, translations };

@@ -4,7 +4,7 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 
 /**
 * API to find similar verses to the one entered
-* req ?translation=123&surah_number=18&aya_number=109&results=5&method=tokenized
+* req ?translation=456&surah_number=18&aya_number=109&results=5&method=tokenized
 * result 
 {
 	info: {

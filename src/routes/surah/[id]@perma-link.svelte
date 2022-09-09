@@ -44,7 +44,7 @@
 	import surahInfo from '../../api/fetch-surah-info';
 	import similarVerses from '../../api/fetch-similar-verses';
 	// Common Scripts
-	import { decodeHtml } from '../../scripts/common-scripts';
+	import { decodeHtml, translationMethodsAvailable } from '../../scripts/common-scripts';
 	import { defaultValues } from '../../scripts/env-variables';
 	import { saveSearchToLocalStorage } from '../../scripts/local-storage-scripts';
 	// Components
@@ -53,15 +53,22 @@
 	import { setLoading } from '../../stores/loading-stores';
 	import { setSearched } from '../../stores/search-stores';
 	import { setSimilarVerseStore } from '../../stores/similar-verse-stores';
+	import { settingsStored } from '../../stores/settings-stores';
 	import { urlParams } from '../../stores/url-params-stores';
 
 	let surahNumber = 0,
 		ayaNumber = 0,
-		promise;
+		promise,
+		translationMethod;
 
 	$: surahNumber;
 	$: ayaNumber;
 	$: promise;
+
+	// Get index of the translation method selected
+	settingsStored.translationMethod.subscribe((value) => {
+		translationMethod = value;
+	});
 
 	urlParams.subscribe((params) => {
 		surahNumber = params.surahNumber;
@@ -86,11 +93,11 @@
 				// This will provide the relevant information to the VersesContainer through the stores
 				if (!error) {
 					const options = {
-						translationId: defaultValues.translationId,
+						translationId: translationMethodsAvailable[translationMethod].translationId,
 						surahNumber: surahNumber,
 						ayaNumber: ayaNumber,
 						results: defaultValues.results,
-						method: defaultValues.method
+						method: translationMethodsAvailable[translationMethod].method
 					};
 
 					// Save surah info in the store

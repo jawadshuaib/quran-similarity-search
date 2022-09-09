@@ -1,5 +1,3 @@
-import { translationMethodsAvailable as translation } from '../scripts/common-scripts';
-
 const envVariables = {  
   isDeveloperMode: true,
   corsAnywhereProxy: 'https://glacial-brushlands-90091.herokuapp.com/',

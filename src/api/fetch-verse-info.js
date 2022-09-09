@@ -1,4 +1,6 @@
 import { envVariables, defaultValues } from '../scripts/env-variables';
+	// Stores
+	import { translations } from '../scripts/common-scripts';
 
 const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoint : envVariables.corsAnywhereProxy + envVariables.isProductionEndPoint}`;
 
@@ -9,7 +11,7 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 */
 const verseInfo = async (surahNumber=0, ayaNumber=0) => { 
 
-  const url = `${baseURL}/verse.php?translation=${defaultValues.translationId}&surah_number=${surahNumber}&aya_number=${ayaNumber}`  
+  const url = `${baseURL}/verse.php?translation=${translations.english.translationId}&surah_number=${surahNumber}&aya_number=${ayaNumber}`  
   
   try {
     const response = await fetch(url);
