@@ -1,4 +1,4 @@
-// Keep a store of whether there are any verses saved
+// Keep a store of whether there are any verses saved in the local storage
 import { writable } from 'svelte/store';
 
 const setHasSavedVerses = (state = false) => {

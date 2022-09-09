@@ -1,11 +1,19 @@
 <script>
+	// Internal
+	import { browser } from '$app/env';
+	// Common Scripts
+	import { areThereAnySavedVerses } from '../scripts/local-storage-scripts';
 	// Stores
 	import { hasSavedVerses } from '../stores/has-saved-verses-stores';
 
 	let showSavedNavItem = false;
+	// From store - updated dynamically as soon as the verse is added or removed
 	hasSavedVerses.subscribe((state) => {
 		showSavedNavItem = state === true ? true : false;
 	});
+
+	// From local storage - updated statically when page loads
+	showSavedNavItem = browser ? areThereAnySavedVerses() : showSavedNavItem;
 </script>
 
 <nav class="flex justify-center w-full">

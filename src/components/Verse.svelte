@@ -81,6 +81,7 @@
 			<span
 				on:click={() => saveOrRemove(verse.surah_number, verse.aya_number)}
 				class="cursor-pointer"
+				title="Bookmark verse"
 			>
 				<!-- icon: bookmark -->
 				<svg
