@@ -1,8 +1,8 @@
 <script>
 	// Scripts
-	import { translationMethodsAvailable } from '../scripts/common-scripts';
+	import { translationMethodsAvailable } from '../../scripts/common-scripts';
 	// Stores
-	import { settingsStored } from '../stores/settings-stores';
+	import { settingsStored } from '../../stores/settings-stores';
 
 	let currentTranslationMethod;
 	settingsStored.translationMethod.subscribe((value) => {

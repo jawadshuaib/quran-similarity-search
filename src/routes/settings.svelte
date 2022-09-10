@@ -1,6 +1,6 @@
 <script>
 	// Transitions
-	import { fade, blur } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	// Common Scripts
 	import { translationMethodsAvailable } from '../scripts/common-scripts';
 	// Stores

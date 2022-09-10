@@ -3,8 +3,8 @@
 	import { page } from '$app/stores';
 
 	// Components
-	import SettingsBar from '../components/SettingsBar.svelte';
-	import Nav from '../components/Nav.svelte';
+	import SettingsBar from '../components/Navigation/SettingsBar.svelte';
+	import Nav from '../components/Navigation/Nav.svelte';
 	import Transition from '../components/Transition.svelte';
 </script>
 

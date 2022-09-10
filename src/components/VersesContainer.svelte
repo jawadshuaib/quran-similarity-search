@@ -4,6 +4,9 @@
 	import { similarVerseStore } from '../stores/similar-verse-stores';
 	import { loading } from '../stores/loading-stores';
 	// Components
+	import Bismillah from './Utilities/Bismillah.svelte';
+	import Btn from './Utilities/Btn.svelte';
+	import Keywords from './Keywords.svelte';
 	import Verse from './Verse.svelte';
 
 	let searchedVerseInfo = {};
@@ -30,11 +33,6 @@
 				showBismillah = true;
 			}
 
-			// Map opacity values to similar verses
-			verses.similar.map((verse) => {
-				verse.opacity = get_verse_opacity(verse.similarity);
-			});
-
 			// Similar verses
 			similarVerses = verses.similar;
 
@@ -50,25 +48,6 @@
 		apiIsLoading = status;
 	});
 
-	// Calculate opacity for similar verses
-	function get_verse_opacity(similarity) {
-		let opacity = 0;
-		if (similarity >= 0.8) {
-			opacity = 100;
-		} else if (similarity >= 0.59) {
-			opacity = 80;
-		} else if (similarity >= 0.5) {
-			opacity = 70;
-		} else if (similarity >= 0.45) {
-			opacity = 40;
-		} else if (similarity >= 0.3) {
-			opacity = 20;
-		} else if (similarity >= 0.1) {
-			opacity = 10;
-		}
-		return opacity;
-	}
-
 	function showMore() {
 		limit += 5;
 
@@ -78,18 +57,12 @@
 
 {#if !is_empty(searchedVerseInfo)}
 	<!-- Show Bismilla -->
-	{#if showBismillah}
-		<div class="bismilla">
-			<div class="bismilla-text text-3xl text-slate-400 text-center my-2">
-				<span title="In the name of God, the Gracious, the Merciful."
-					>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span
-				>
-			</div>
-		</div>
-	{/if}
+	<Bismillah {showBismillah} />
 
 	<!-- Show the verse searched -->
-	<Verse verse={searchedVerseInfo} payloadType="searched" opacity="100" />
+	<Verse verse={searchedVerseInfo} payloadType="searched" />
+	<!-- Keywords -->
+	<Keywords verse={searchedVerseInfo} />
 
 	<!-- Show similar verses if any are found -->
 	{#if similarVerses.length}
@@ -98,17 +71,13 @@
 		</h4>
 		{#each similarVerses as verse, i}
 			{#if i < limit}
-				<Verse {verse} payloadType="similar" opacity={verse.opacity} />
+				<Verse {verse} payloadType="similar" />
 			{/if}
 		{/each}
+		<!-- Show More Button -->
 		{#if similarVerses.length > limit && showMoreBtn}
 			<div class="text-center">
-				<button
-					class="my-5 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full"
-					on:click={showMore}
-				>
-					Show More Results
-				</button>
+				<Btn action={showMore} text="Show More Results" active={true} />
 			</div>
 		{/if}
 	{:else if searchedFoundSimilarVerses}

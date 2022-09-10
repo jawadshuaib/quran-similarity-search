@@ -16,11 +16,9 @@
 
 	export let verse;
 	export let payloadType;
-	export let opacity;
 
 	let linkTitle = '';
 	let bookmarkColor = '';
-
 	// Execute the following whenever verse changes
 	$: verse,
 		((_) => {
@@ -63,6 +61,7 @@
 	}
 </script>
 
+<!-- Search verse (can be from a route as well, i.e. /surah/1:1) -->
 {#if payloadType === 'searched'}
 	<div class="main-quote py-4 my-2 border-2 border-slate-50 bg-amber-50 rounded items-center">
 		<div class="my-2 text-3xl px-5 text-slate-700 text-center font-cormorant">
@@ -118,9 +117,10 @@
 			</a>
 		</div>
 	</div>
+	<!-- Similar or Saved verses -->
 {:else if payloadType === 'similar' || payloadType === 'saved'}
 	<div
-		class="similar-verse grid grid-cols-12 py-4 my-2 border-2 border-slate-50 rounded items-center text-xl text-slate-800 opacity-{opacity} hover:border-slate-200"
+		class="similar-verse grid grid-cols-12 py-4 my-2 border-2 border-slate-50 rounded items-center text-xl text-slate-800 hover:border-slate-200"
 	>
 		<div class="col-span-1 wrap-right">
 			<!-- Option for saving verses to local storage -->
@@ -169,9 +169,10 @@
 			{verse.surah_number}:{verse.aya_number}
 		</div>
 		<main class="col-span-10">
-			<div class="text-right px-5 text-2xl">{verse.quranic_text}</div>
+			<div class="text-right px-5 text-2xl">
+				{@html verse.quranic_text}
+			</div>
 			<div class="my-2 px-5">{decodeHtml(verse.translation)}</div>
-			<!-- <div>{verse.similarity} {opacity}</div> -->
 		</main>
 	</div>
 {/if}

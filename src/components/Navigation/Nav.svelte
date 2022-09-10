@@ -2,9 +2,9 @@
 	// Internal
 	import { browser } from '$app/env';
 	// Common Scripts
-	import { areThereAnySavedVerses } from '../scripts/local-storage-scripts';
+	import { areThereAnySavedVerses } from '../../scripts/local-storage-scripts';
 	// Stores
-	import { hasSavedVerses } from '../stores/has-saved-verses-stores';
+	import { hasSavedVerses } from '../../stores/has-saved-verses-stores';
 
 	let showSavedNavItem = false;
 	// From store - updated dynamically as soon as the verse is added or removed
