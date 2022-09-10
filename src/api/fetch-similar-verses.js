@@ -4,31 +4,39 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 
 /**
 * API to find similar verses to the one entered
-* req ?translation=456&surah_number=18&aya_number=109&results=5&method=tokenized
+* req ?translation=789&surah_number=7&aya_number=34&method=arabic_lemmatized
 * result 
 {
-	info: {
-		"name": "Itani - English",						
-		"source": "https://tanzil.net/trans/",
-		"method": "cosine_similarity_translation_tokenized",
-		"surah_number": "18",
-		"aya_number": "109",
-		"translation": "Say, &ldquo;If the ocean were ink for the words of my Lord, the ocean would run out, before the words of my Lord run out,&rdquo; even if We were to bring the like of it in addition to it.",
-	},
-	"similar": [
-		{ 
-			"surah_number": 26, 
-			"aya_number": 16,
-			"translation": "Go to Pharaoh, and say, &lsquo;We are the Messengers of the Lord of the Worlds.",
-			"similarity": 0.6106
-		}
-	]
+"info": {
+	"name": "Arabic (Simple)",						
+	"source": "https://tanzil.net/download/",
+	"method": "cosine_similarity_arabic_lemmatized",
+	"surah_number": "7",
+	"aya_number": "34",
+	"quranic_text": "وَلِكُلِّ أُمَّةٍ أَجَلٌ ۖ فَإِذَا جَاءَ أَجَلُهُمْ لَا يَسْتَأْخِرُونَ سَاعَةً ۖ وَلَا يَسْتَقْدِمُونَ",
+	"minimal": "ولكل أمة أجل فإذا جاء أجلهم لا يستأخرون ساعة ولا يستقدمون",
+	"arabic_lemmatized": "كل أمة أجل إذا جاء أجل لا يستأخرون ساعة لا يستقدمون",
+	"arabic_lemmatized_without_stop_words": "أمة جاء يستأخرون ساعة يستقدمون",
+	"translation": "For every nation is an appointed time. When their time has come, they cannot delay it by one hour, nor can they advance it."
+},
+"similar": [
+	{ 
+		"surah_number": 10, 
+		"aya_number": 49,
+		"quranic_text": "قُل لَّا أَمْلِكُ لِنَفْسِي ضَرًّا وَلَا نَفْعًا إِلَّا مَا شَاءَ اللَّهُ ۗ لِكُلِّ أُمَّةٍ أَجَلٌ ۚ إِذَا جَاءَ أَجَلُهُمْ فَلَا يَسْتَأْخِرُونَ سَاعَةً ۖ وَلَا يَسْتَقْدِمُونَ",		
+		"minimal": "قل لا أملك لنفسي ضرا ولا نفعا إلا ما شاء الله لكل أمة أجل إذا جاء أجلهم فلا يستأخرون ساعة ولا يستقدمون",
+		"arabic_lemmatized": "قال لا ملك نفس ضر لا نفع إلا ما شاء الله كل أمة أجل إذا جاء أجل لا يستأخرون ساعة لا يستقدمون",
+		"arabic_lemmatized_without_stop_words": "قال ملك ضر نفع شاء الله أمة جاء يستأخرون ساعة يستقدمون",
+		"translation": "Say, &ldquo;I have no power to harm or benefit myself, except as God wills. To every nation is an appointed time. Then, when their time arrives, they can neither postpone it by one hour, nor advance it.",
+		"similarity": 0.8176298175326768
+	}
+]
 }
 */
 
 const similarVerses = async (options) => { 
 
-  const url = `${baseURL}/similar.php?translation=${options.translationId}&surah_number=${options.surahNumber}&aya_number=${options.ayaNumber}&results=${options.results}&method=${options.method}`;    
+  const url = `${baseURL}/similar.php?translation=${options.translationId}&surah_number=${options.surahNumber}&aya_number=${options.ayaNumber}&method=${options.method}`;    
 	
   try {
     const response = await fetch(url);

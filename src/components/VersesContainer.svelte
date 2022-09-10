@@ -11,6 +11,10 @@
 	let searchedFoundSimilarVerses = false;
 	let showBismillah = true;
 
+	// Total results to show
+	let limit = 5;
+	let showMoreBtn = true;
+
 	$: apiIsLoading = true;
 
 	similarVerseStore.subscribe((verses) => {
@@ -36,6 +40,7 @@
 
 			if (similarVerses.length) {
 				searchedFoundSimilarVerses = true;
+				apiIsLoading = false;
 			}
 		}
 	});
@@ -63,6 +68,12 @@
 		}
 		return opacity;
 	}
+
+	function showMore() {
+		limit += 5;
+
+		showMoreBtn = similarVerses.length > limit ? true : false;
+	}
 </script>
 
 {#if !is_empty(searchedVerseInfo)}
@@ -85,9 +96,21 @@
 		<h4 class="mt-5 text-center font-medium leading-tight text-2xl mb-2 text-orange-600">
 			Similar Verse{#if similarVerses.length > 1}s{/if}
 		</h4>
-		{#each similarVerses as verse}
-			<Verse {verse} payloadType="similar" opacity={verse.opacity} />
+		{#each similarVerses as verse, i}
+			{#if i < limit}
+				<Verse {verse} payloadType="similar" opacity={verse.opacity} />
+			{/if}
 		{/each}
+		{#if similarVerses.length > limit && showMoreBtn}
+			<div class="text-center">
+				<button
+					class="my-5 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full"
+					on:click={showMore}
+				>
+					Show More Results
+				</button>
+			</div>
+		{/if}
 	{:else if searchedFoundSimilarVerses}
 		<h4 class="mt-5 text-center font-medium leading-tight text-2xl mb-2 text-orange-600">
 			No Similar Verses Found
