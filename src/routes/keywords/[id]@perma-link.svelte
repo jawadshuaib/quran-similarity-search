@@ -97,9 +97,9 @@
 
 <h1 class="sm:text-3xl text-2xl text-center mt-8 uppercase">Keyword Search Results</h1>
 <div class="items-center content-center">
-	<div class="flex justify-center mt-3 mb-4 text-3xl font-cormorant text-center">
+	<div class="flex flex-wrap justify-center mt-3 mb-4 text-3xl font-cormorant text-center">
 		{#each keywords.split(',') as keyword, idx}
-			<div class="flex-initial bg-{pickBgColor(idx)}-200 rounded border-2 p-2 w-24">
+			<div class="flex-initial w-24 bg-{pickBgColor(idx)}-200 rounded border-2 p-2 mx-2">
 				{keyword}
 			</div>
 		{/each}

@@ -53,12 +53,12 @@
 <div class="border-2 border-slate-50 rounded p-5 items-center">
 	<div
 		on:click={select}
-		class="flex justify-center my-2 text-2xl px-5 font-cormorant text-slate-400 text-center"
+		class="flex flex-wrap justify-center my-2 text-2xl px-5 font-cormorant text-slate-400 text-center"
 		bind:this={el}
 	>
 		{#each keywords as keyword}
 			<div
-				class="keyword rounded flex-initial w-24 border-2 mx-2 py-2 hover:border-orange-400 hover:border-2 hover:cursor-pointer"
+				class="keyword rounded flex-initial w-24 border-2 m-2 py-2 hover:border-orange-400 hover:border-2 hover:cursor-pointer"
 			>
 				{keyword}
 			</div>
@@ -67,7 +67,7 @@
 		{#if canSearch}
 			<div
 				on:click={search}
-				class="wrap-center rounded flex-initial bg-orange-500 text-white px-3 py-2 hover:bg-orange-700 hover:cursor-pointer"
+				class="wrap-center rounded flex-initial m-2 h-14 bg-orange-500 text-white px-3  hover:bg-orange-700 hover:cursor-pointer"
 			>
 				Search Keywords
 			</div>
