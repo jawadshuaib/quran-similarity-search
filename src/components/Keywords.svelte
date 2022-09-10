@@ -7,11 +7,17 @@
 	let canSearch = false;
 	let keywords = [];
 	let el;
-	verse.arabic_lemmatized_without_stop_words = 'ABC XYZ';
-	if (verse.arabic_lemmatized_without_stop_words != null) {
-		keywords = verse.arabic_lemmatized_without_stop_words.split(' ');
-	}
 
+	// Execute the following whenever verse changes
+	$: verse,
+		((_) => {
+			if (verse.arabic_lemmatized != null) {
+				keywords = verse.arabic_lemmatized.split(' ');
+				keywords = keywords.reverse();
+			}
+		})();
+
+	// Select the keywords
 	function select(e) {
 		if (e.target.classList.contains('keyword')) {
 			const selected = 'selected';
@@ -27,6 +33,7 @@
 		el.querySelector('.selected') !== null ? (canSearch = true) : (canSearch = false);
 	}
 
+	// Redirect the user to the keywords search page
 	function search() {
 		// Get keywords selected for search
 		const els = el.getElementsByClassName('selected');
@@ -46,13 +53,12 @@
 <div class="border-2 border-slate-50 rounded p-5 items-center">
 	<div
 		on:click={select}
-		class="grid grid-cols-10 gap-2 my-2 text-2xl px-5 font-cormorant text-slate-400 text-center"
+		class="flex justify-center my-2 text-2xl px-5 font-cormorant text-slate-400 text-center"
 		bind:this={el}
 	>
-		{#each keywords as keyword, idx}
+		{#each keywords as keyword}
 			<div
-				id={idx}
-				class="keyword rounded col-span-1 border-2 py-2 hover:border-orange-400 hover:border-2 hover:cursor-pointer"
+				class="keyword rounded flex-initial w-24 border-2 mx-2 py-2 hover:border-orange-400 hover:border-2 hover:cursor-pointer"
 			>
 				{keyword}
 			</div>
@@ -61,7 +67,7 @@
 		{#if canSearch}
 			<div
 				on:click={search}
-				class="wrap-center rounded col-span-2 bg-orange-500 text-white py-2 hover:bg-orange-700 hover:cursor-pointer"
+				class="wrap-center rounded flex-initial bg-orange-500 text-white px-3 py-2 hover:bg-orange-700 hover:cursor-pointer"
 			>
 				Search Keywords
 			</div>

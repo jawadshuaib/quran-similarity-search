@@ -108,7 +108,7 @@
 
 {#if showError}
 	<Error
-		title="Search"
+		title="Note"
 		description="No results were found for the keywords searched."
 		type="notice"
 	/>
