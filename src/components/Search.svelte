@@ -25,11 +25,6 @@
 	let savedSearch = browser ? getSearchFromLocalStorage() : null;
 	let search = savedSearch === null ? defaultValues.search : savedSearch;
 
-	// This translationMethod is an index like 0, 1, 2
-	// let savedTranslationMethod = browser ? getTranslationMethodFromLocalStorage() : null;
-	// let translationMethod =
-	// 	savedTranslationMethod === null ? defaultValues.translationMethod : savedTranslationMethod;
-
 	let translationMethod;
 	settingsStored.translationMethod.subscribe((value) => {
 		translationMethod = value;
