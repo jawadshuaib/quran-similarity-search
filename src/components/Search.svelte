@@ -102,7 +102,6 @@
 					translationId: translationMethodsAvailable[translationMethod].translationId,
 					surahNumber: surahNumber,
 					ayaNumber: ayaNumber,
-					results: defaultValues.results,
 					method: translationMethodsAvailable[translationMethod].method
 				};
 
