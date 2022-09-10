@@ -56,14 +56,18 @@
 			return;
 		}
 
+		const keywordsArr = keywords.split(',');
 		verses = json.results.map((verse) => {
 			// For each verse, highlight the keywords
 			let arr = verse.quranic_text.split(' ');
 			arr.forEach((word, index) => {
-				// Convert keywords to an array and then
 				// Remove diacritics before searching for the keywords in the verse
-				if (keywords.split(',').some((el) => removeTashkeelAll(word).includes(el))) {
-					arr[index] = `<span class="bg-yellow-200">${word}</span>`;
+				let indexOfKeyword = 0;
+				if (keywordsArr.some((el) => removeTashkeelAll(word).includes(el))) {
+					// Find the index of the keyword in the verse so we can highlight it
+					indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeelAll(word).includes(el));
+					// Highlight the keyword
+					arr[index] = `<span class="bg-${pickBgColor(indexOfKeyword)}-200">${word}</span>`;
 				} else {
 					arr[index] = word;
 				}
@@ -84,25 +88,23 @@
 	function removeTashkeelAll(s) {
 		return s.replace(/[ؐ-ًؕ-ٖٓ-ٟۖ-ٰٰۭ]/g, '');
 	}
-	// function remove_diacritics(text) {
-	// 	//remove special characters
-	// 	text = text.replace(/([^\u0621-\u063A\u0641-\u064A\u0660-\u0669a-zA-Z 0-9])/g, '');
 
-	// 	//normalize Arabic
-	// 	text = text.replace(/(آ|إ|أ)/g, 'ا');
-	// 	text = text.replace(/(ة)/g, 'ه');
-	// 	text = text.replace(/(ئ|ؤ)/g, 'ء');
-	// 	text = text.replace(/(ى)/g, 'ي');
-
-	// 	//convert arabic numerals to english counterparts.
-	// 	var starter = 0x660;
-	// 	for (var i = 0; i < 10; i++) {
-	// 		text.replace(String.fromCharCode(starter + i), String.fromCharCode(48 + i));
-	// 	}
-
-	// 	return text;
-	// }
+	function pickBgColor(idx) {
+		const bgColors = ['yellow', 'orange', 'green', 'pink', 'blue', 'red', 'purple'];
+		return bgColors[idx % bgColors.length];
+	}
 </script>
+
+<h1 class="sm:text-3xl text-2xl text-center mt-8 uppercase">Keyword Search Results</h1>
+<div class="items-center content-center">
+	<div class="flex justify-center mt-3 mb-4 text-3xl font-cormorant text-center">
+		{#each keywords.split(',') as keyword, idx}
+			<div class="flex-initial bg-{pickBgColor(idx)}-200 rounded border-2 p-2 w-24">
+				{keyword}
+			</div>
+		{/each}
+	</div>
+</div>
 
 {#if showError}
 	<Error
