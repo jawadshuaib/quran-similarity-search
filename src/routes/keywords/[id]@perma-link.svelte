@@ -167,13 +167,13 @@
 	<div
 		on:click={searchAgain}
 		bind:this={el}
-		class="flex flex-wrap justify-center mt-3 mb-4 text-3xl font-cormorant text-center"
+		class="flex flex-wrap justify-center mt-3 mb-4 text-3xl font-cormorant text-center text-slate-400"
 	>
 		{#each fixedKeywords.split(',') as keyword, idx}
 			<div
 				class="shadow-md keyword selected flex-auto w-24 {pickBgColor(
 					idx
-				)} rounded border-2 p-2 mx-2 hover:cursor-pointer hover:bg-white hover:shadow-lg"
+				)} rounded border-2 p-2 mx-2 hover:cursor-pointer hover:bg-white hover:shadow-lg hover:border-slate-200"
 			>
 				{keyword}
 			</div>
@@ -207,5 +207,10 @@
 	.selected {
 		border-color: orange;
 		border-width: 0.2rem;
+		color: #000;
+	}
+	.selected:hover {
+		border-color: lightgray;
+		color: gray;
 	}
 </style>
