@@ -69,7 +69,9 @@
 					// Find the index of the keyword in the verse so we can highlight it
 					indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeelAll(word).includes(el));
 					// Highlight the keyword
-					arr[index] = `<span class="bg-${pickBgColor(indexOfKeyword)}-200">${word}</span>`;
+					arr[index] = `<span class="border-2 p-2 bg-${pickBgColor(
+						indexOfKeyword
+					)}-200">${word}</span>`;
 				} else {
 					arr[index] = word;
 				}
@@ -92,7 +94,18 @@
 	}
 
 	function pickBgColor(idx) {
-		const bgColors = ['yellow', 'orange', 'green', 'pink', 'blue', 'red', 'purple'];
+		const bgColors = [
+			'yellow',
+			'orange',
+			'amber',
+			'lime',
+			'blue',
+			'cyan',
+			'sky',
+			'pink',
+			'purple',
+			'indigo'
+		];
 		return bgColors[idx % bgColors.length];
 	}
 </script>
