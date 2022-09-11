@@ -127,9 +127,13 @@
 		{#if totalResults > 0}
 			<div class="text-slate-400 text-center">
 				{#if totalKeywordsSelected > 1}
-					Found <span class="font-medium">{totalResults} results</span> for this combination of keywords
+					Found <span class="font-medium"
+						>{totalResults} result{#if totalResults > 1}s{/if}</span
+					> for this combination of keywords
 				{:else}
-					Found <span class="font-medium">{totalResults} results</span> for this keyword.
+					Found <span class="font-medium"
+						>{totalResults} result{#if totalResults > 1}s{/if}</span
+					> for this keyword.
 				{/if}
 			</div>
 		{:else}

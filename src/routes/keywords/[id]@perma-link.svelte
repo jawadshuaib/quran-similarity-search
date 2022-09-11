@@ -31,6 +31,7 @@
 	import Verse from '../../components/Verse.svelte';
 
 	export let keywords;
+	let totalKeywords = 0;
 	let showError = false;
 	let verses = [];
 	/**
@@ -57,6 +58,7 @@
 		}
 
 		const keywordsArr = keywords.split(',');
+		totalKeywords = keywordsArr.length;
 		verses = json.results.map((verse) => {
 			// For each verse, highlight the keywords
 			let arr = verse.quranic_text.split(' ');
@@ -115,6 +117,10 @@
 {/if}
 
 {#if verses.length}
+	<div class="text-center">
+		The following verse{#if verses.length > 1}s{/if} in the Qur'an contain{#if verses.length == 1}s{/if}
+		the searched keyword{#if totalKeywords > 1}s{/if}:
+	</div>
 	{#each verses as verse}
 		<Verse {verse} payloadType="similar" />
 		<!-- {result.surah_number}:{result.aya_number} {result.quranic_text} {result.translation} -->
