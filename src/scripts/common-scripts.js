@@ -13,6 +13,16 @@ function isNumberKey(str) {
   return true;
 }
 
+// https://stackoverflow.com/questions/5224267/javascriptremove-arabic-text-diacritic-dynamically
+function removeTashkeel(s) {
+  return s.replace(/[ؐ-ًؕ-ٖٓ-ٟۖ-ٰٰۭ]/g, '');
+}
+
+function isArabic(str) {
+  var pattern = /[\u0600-\u06FF\u0750-\u077F]/;
+  return pattern.test(str);
+}
+
 // Default translation requested is 456. This is the id for the itani translation. Another option is 789 when requesting the Arabic lemmatized method.
 // Default method for finding similar verses. Options: 'formatted', 'tokenized', 'without_stop_words', 'arabic_lemmatized', 'arabic_lemmatized_without_stop_words' or leave blank for default.  
 const translations = {
@@ -53,4 +63,4 @@ const translationMethodsAvailable = [
 ]
 
 // export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, decodeHtml, isNumberKey };
-export { decodeHtml, isNumberKey, translationMethodsAvailable, translations };
+export { decodeHtml, isNumberKey, removeTashkeel, isArabic, translationMethodsAvailable, translations };

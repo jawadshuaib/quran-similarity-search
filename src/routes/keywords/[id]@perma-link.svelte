@@ -29,6 +29,8 @@
 	// Components
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
+	// Scripts
+	import { removeTashkeel } from '../../scripts/common-scripts';
 
 	export let keywords;
 	let fixedKeywords = keywords; // Assign to another variable to prevent reactivity
@@ -84,9 +86,9 @@
 					arr.forEach((word, index) => {
 						// Remove diacritics before searching for the keywords in the verse
 						let indexOfKeyword = 0;
-						if (keywordsArr.some((el) => removeTashkeelAll(word).includes(el))) {
+						if (keywordsArr.some((el) => removeTashkeel(word).includes(el))) {
 							// Find the index of the keyword in the verse so we can highlight it
-							indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeelAll(word).includes(el));
+							indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeel(word).includes(el));
 							// Highlight the keyword
 							arr[index] =
 								`<span class="shadow-md rounded p-1 ` +
@@ -149,11 +151,6 @@
 
 		// Remove trailing comma
 		return selected.replace(/(,$)/g, '');
-	}
-
-	// https://stackoverflow.com/questions/5224267/javascriptremove-arabic-text-diacritic-dynamically
-	function removeTashkeelAll(s) {
-		return s.replace(/[ؐ-ًؕ-ٖٓ-ٟۖ-ٰٰۭ]/g, '');
 	}
 
 	function pickBgColor(idx) {

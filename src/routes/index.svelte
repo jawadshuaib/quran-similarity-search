@@ -10,13 +10,14 @@
 	let heading = '';
 	searched.subscribe((surah) => {
 		if (surah.surahNumber !== 0 && surah.ayaNumber !== 0) {
-			heading = `Search Surah ${decodeHtml(surah.arabicName)}, Verse ${surah.ayaNumber}`;
+			heading = `Surah ${decodeHtml(surah.arabicName)}, Verse ${surah.ayaNumber}`;
 		} else {
-			heading = 'Search a Verse in the Quran';
+			heading = ''; //'Search a Verse in the Quran';
 		}
 	});
 </script>
 
-<h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">{heading}</h1>
+<h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Search</h1>
 <Search />
+<h1 class="sm:text-2xl text-xl text-center my-8 uppercase">{heading}</h1>
 <VersesContainer />

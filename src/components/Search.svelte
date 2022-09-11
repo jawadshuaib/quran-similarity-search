@@ -1,6 +1,7 @@
 <script>
 	// Internal
 	import { browser } from '$app/env';
+	import { goto } from '$app/navigation';
 	// API
 	import surahInfo from '../api/fetch-surah-info';
 	import similarVerses from '../api/fetch-similar-verses';
@@ -11,7 +12,12 @@
 		saveSearchToLocalStorage
 	} from '../scripts/local-storage-scripts';
 	// Scripts
-	import { isNumberKey, translationMethodsAvailable } from '../scripts/common-scripts';
+	import {
+		isNumberKey,
+		removeTashkeel,
+		isArabic,
+		translationMethodsAvailable
+	} from '../scripts/common-scripts';
 	// Stores
 	import { setLoading } from '../stores/loading-stores';
 	import { setSearched } from '../stores/search-stores';
@@ -39,6 +45,18 @@
 	}
 
 	function handleChange(e) {
+		// Redirect the user to the keywords search page if the user has searched for parts of an aya
+		if (isArabic(removeTashkeel(search))) {
+			if (e.key === 'Enter') {
+				goto(`/keywords/${search.split(' ').join()}`);
+			}
+		} else {
+			// Initiate search for similar verses provided correct input is provided (i.e. 23:1)
+			findSimilarVerses(e);
+		}
+	}
+
+	function findSimilarVerses(e) {
 		error = false;
 		// Check if any character in the input is not a number
 		if (search.split('').filter((char) => !isNumberKey(char)).length > 0) {
