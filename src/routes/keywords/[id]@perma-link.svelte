@@ -70,7 +70,7 @@
 					indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeelAll(word).includes(el));
 					// Highlight the keyword
 					arr[index] =
-						`<span class="border-2 rounded p-2 ` + pickBgColor(indexOfKeyword) + `">${word}</span>`;
+						`<span class="border-2 rounded p-1 ` + pickBgColor(indexOfKeyword) + `">${word}</span>`;
 				} else {
 					arr[index] = word;
 				}
@@ -93,7 +93,14 @@
 	}
 
 	function pickBgColor(idx) {
-		const bgColors = ['bg-yellow-200', 'bg-orange-200', 'bg-violet-200', 'bg-green-200'];
+		const bgColors = [
+			'bg-yellow-200',
+			'bg-orange-200',
+			'bg-purple-200',
+			'bg-red-200',
+			'bg-violet-200',
+			'bg-green-200'
+		];
 		return bgColors[idx % bgColors.length];
 	}
 </script>
