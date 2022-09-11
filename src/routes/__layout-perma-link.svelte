@@ -19,7 +19,7 @@
 		<slot />
 	</Transition>
 </div>
-<!-- Settings bar -->
+<!-- Settings Bar -->
 {#if $page.url.pathname.includes('/surah')}
 	<SettingsBar />
 {/if}
