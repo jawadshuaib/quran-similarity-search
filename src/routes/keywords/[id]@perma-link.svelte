@@ -69,9 +69,8 @@
 					// Find the index of the keyword in the verse so we can highlight it
 					indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeelAll(word).includes(el));
 					// Highlight the keyword
-					arr[index] = `<span class="border-2 p-2 bg-${pickBgColor(
-						indexOfKeyword
-					)}-200">${word}</span>`;
+					arr[index] =
+						`<span class="border-2 rounded p-2 ` + pickBgColor(indexOfKeyword) + `">${word}</span>`;
 				} else {
 					arr[index] = word;
 				}
@@ -94,18 +93,7 @@
 	}
 
 	function pickBgColor(idx) {
-		const bgColors = [
-			'yellow',
-			'orange',
-			'amber',
-			'lime',
-			'blue',
-			'cyan',
-			'sky',
-			'pink',
-			'purple',
-			'indigo'
-		];
+		const bgColors = ['bg-yellow-200', 'bg-orange-200', 'bg-violet-200', 'bg-green-200'];
 		return bgColors[idx % bgColors.length];
 	}
 </script>
@@ -114,7 +102,7 @@
 <div class="items-center content-center">
 	<div class="flex flex-wrap justify-center mt-3 mb-4 text-3xl font-cormorant text-center">
 		{#each keywords.split(',') as keyword, idx}
-			<div class="flex-auto w-24 bg-{pickBgColor(idx)}-200 rounded border-2 p-2 mx-2">
+			<div class="flex-auto w-24 {pickBgColor(idx)} rounded border-2 p-2 mx-2">
 				{keyword}
 			</div>
 		{/each}
