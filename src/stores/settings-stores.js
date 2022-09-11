@@ -10,7 +10,7 @@ import { getTranslationMethodFromLocalStorage, saveTranslationMethodToLocalStora
 const stored = browser ? getTranslationMethodFromLocalStorage() : null;
 
 // Set the stored value or a sane default.
-const translationMethod = writable(stored == null ? defaultValues.translationMethod : stored);
+const translationMethod = writable(stored == null || isNaN(stored) ? defaultValues.translationMethod : stored);
 
 // Anytime the store changes, update the local storage value.
 translationMethod.subscribe((value) => {

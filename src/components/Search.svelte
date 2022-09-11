@@ -93,6 +93,9 @@
 			setLoading(true);
 
 			if (readyToSearch) {
+				translationMethod = isNaN(translationMethod)
+					? defaultValues.translationMethod
+					: translationMethod;
 				const options = {
 					translationId: translationMethodsAvailable[translationMethod].translationId,
 					surahNumber: surahNumber,
