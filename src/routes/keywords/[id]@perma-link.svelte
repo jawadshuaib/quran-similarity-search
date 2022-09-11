@@ -98,8 +98,9 @@
 			'bg-orange-200',
 			'bg-purple-200',
 			'bg-red-200',
-			'bg-violet-200',
-			'bg-green-200'
+			'bg-sky-200',
+			'bg-green-200',
+			'bg-violet-200'
 		];
 		return bgColors[idx % bgColors.length];
 	}
