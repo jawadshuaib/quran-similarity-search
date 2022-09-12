@@ -1,3 +1,4 @@
+<svelte:head><title>About Quran ML</title></svelte:head>
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">About</h1>
 <div class="gap-2 py-2 text-justify">
 	<div class="md:text-xl">

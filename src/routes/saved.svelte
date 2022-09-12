@@ -50,6 +50,7 @@
 	}
 </script>
 
+<svelte:head><title>Your Saved Verses of the Quran</title></svelte:head>
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Saved</h1>
 <div class="gap-2 py-2 text-center">
 	<!-- Loading API... -->

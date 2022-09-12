@@ -35,10 +35,13 @@
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
 	let fixedKeywords = keywords; // Assign to another variable to prevent reactivity
+
 	let totalKeywords = 0;
+	let apiIsLoading;
 	let showError = false;
 	let verses = [];
 	let el;
+
 	const bgColors = [
 		'bg-yellow-200',
 		'bg-orange-200',
@@ -73,7 +76,12 @@
 				]
 			}
 			*/
+
+			// API is loading
+			apiIsLoading = true;
 			keywordsSearch(keywords).then((json) => {
+				apiIsLoading = false;
+
 				if (json.results === undefined || json.results.length === 0) {
 					showError = true;
 					return;
@@ -159,7 +167,12 @@
 	}
 </script>
 
+<svelte:head><title>Find Keywords in the Quran</title></svelte:head>
 <h1 class="sm:text-3xl text-2xl text-center mt-8 uppercase">Keyword Search Results</h1>
+<!-- Loading -->
+{#if apiIsLoading}
+	<div class="text-center animate-bounce text-3xl">...</div>
+{/if}
 <!-- Keywords -->
 <div class="items-center content-center">
 	<div

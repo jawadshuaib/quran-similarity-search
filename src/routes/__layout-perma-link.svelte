@@ -1,13 +1,17 @@
 <script>
 	// Internal
 	import { page } from '$app/stores';
+
 	// Components
+	import DevMode from '../components/Utilities/DevMode.svelte';
 	import SettingsBar from '../components/Navigation/SettingsBar.svelte';
 	import Nav from '../components/Navigation/Nav.svelte';
 	import Transition from '../components/Transition.svelte';
 </script>
 
-<svelte:head><title>Compare Verses in the Quran</title></svelte:head>
+<svelte:head><title>Linguistically Similar Verses in the Quran</title></svelte:head>
+<!-- Show this bar when in dev mode -->
+<DevMode />
 <div
 	class="bg-cover lg:h-80 md:h-60 sm:h-28 h-10 w-full shadow-lg"
 	style="background-image: url('../pattern-mosque.jpeg')"
