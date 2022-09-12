@@ -33,6 +33,7 @@
 	import { removeTashkeel } from '../../scripts/common-scripts';
 
 	export let keywords;
+	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
 	let fixedKeywords = keywords; // Assign to another variable to prevent reactivity
 	let totalKeywords = 0;
 	let showError = false;

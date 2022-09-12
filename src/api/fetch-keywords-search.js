@@ -1,7 +1,4 @@
-// Internal
 import { envVariables } from '../scripts/env-variables';
-// Scripts
-import { removeTashkeel } from '../scripts/common-scripts';
 
 const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoint : envVariables.corsAnywhereProxy + envVariables.isProductionEndPoint}`;
 
@@ -22,7 +19,7 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
   }
 */
 const keywordsSearch = async (keywords) => {   
-  keywords = removeTashkeel (keywords);
+  
   const url = `${baseURL}/keywords.php?search=${keywords}`;  
 
   try {
