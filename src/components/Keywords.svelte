@@ -17,6 +17,7 @@
 		((_) => {
 			if (verse.arabic_lemmatized != null) {
 				keywords = verse.arabic_lemmatized.split(' ');
+				keywords = [...new Set(keywords)];
 				keywords = keywords.reverse();
 			}
 

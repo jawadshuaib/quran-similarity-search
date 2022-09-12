@@ -91,8 +91,13 @@
 				totalKeywords = keywordsArr.length;
 				verses = json.results.map((verse) => {
 					// For each verse, highlight the keywords
-					let arr = verse.quranic_text.split(' ');
+					// We use the minimal verse of the verse since it is easier to match with lemmatized keywords
+					let arr = verse.minimal.split(' ');
+					let arr2 = verse.quranic_text.split(' ');
 					arr.forEach((word, index) => {
+						// Grab word with tashkeel
+						let wordWithTashkeel = arr2[index];
+
 						// Remove diacritics before searching for the keywords in the verse
 						let indexOfKeyword = 0;
 						if (keywordsArr.some((el) => removeTashkeel(word).includes(el))) {
@@ -108,12 +113,12 @@
 						}
 					});
 
-					verse.quranic_text = arr.join(' ');
+					const quranic_text = arr.join(' ');
 
 					return {
 						surah_number: verse.surah_number,
 						aya_number: verse.aya_number,
-						quranic_text: verse.quranic_text,
+						quranic_text,
 						translation: verse.translation
 					};
 				});
@@ -167,7 +172,6 @@
 	}
 </script>
 
-<svelte:head><title>Find Keywords in the Quran</title></svelte:head>
 <h1 class="sm:text-3xl text-2xl text-center mt-8 uppercase">Keyword Search Results</h1>
 <!-- Loading -->
 {#if apiIsLoading}
