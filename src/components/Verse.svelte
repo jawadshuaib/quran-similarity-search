@@ -12,7 +12,7 @@
 	} from '../scripts/local-storage-scripts';
 	// Stores
 	import { searched } from '../stores/search-stores';
-	import { setHasSavedVerses } from '../stores/has-saved-verses-stores';
+	import { didSaveVerse } from '../stores/did-save-verse-stores';
 
 	export let verse;
 	export let payloadType;
@@ -27,10 +27,6 @@
 				bookmarkColor = isVerseSaved(verse.surah_number, verse.aya_number)
 					? 'text-orange-600 hover:text-gray-300'
 					: 'text-gray-300 hover:text-orange-600';
-
-				// Store whether or not there are any saved verses in local storage
-				// This will help us determine whether or not to show the "saved" item in navigation
-				areThereAnySavedVerses() ? setHasSavedVerses(true) : setHasSavedVerses(false);
 			}
 		})();
 
@@ -55,8 +51,7 @@
 			}
 
 			// Store whether or not there are any saved verses in local storage
-			// This will help us determine whether or not to show the "saved" item in navigation
-			areThereAnySavedVerses() ? setHasSavedVerses(true) : setHasSavedVerses(false);
+			areThereAnySavedVerses() && didSaveVerse(true);
 		}
 	}
 </script>

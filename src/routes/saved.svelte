@@ -6,7 +6,14 @@
 	// Common Scripts
 	import { areThereAnySavedVerses, getSavedVerses } from '../scripts/local-storage-scripts';
 	// Components
+	import Error from '../components/Utilities/Error.svelte';
 	import Verse from '../components/Verse.svelte';
+
+	const defaultNote = {
+		title: 'Note',
+		description: "You haven't saved any verses yet.",
+		type: 'notice'
+	};
 
 	let savedVerses = '';
 	let verses = [];
@@ -67,12 +74,7 @@
 
 	<!-- Notice if there aren't any saved verses -->
 	{#if browser && !areThereAnySavedVerses()}
-		<div
-			class="p-4 mb-4 text-xl text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800 text-center mt-5"
-			role="alert"
-		>
-			<span class="font-medium">Notice:</span>
-			You haven't saved any verses yet.
-		</div>
+		<Error {...defaultNote} />
+		<div class="text-center"><img src="./usage-1.png" alt="How to save verses" /></div>
 	{/if}
 </div>

@@ -24,7 +24,7 @@
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
 	import { settingsStored } from '../stores/settings-stores';
 
-	const searchExamples = ['18:109', 'الرَّحْمَـٰنِ الرَّحِيمِ'];
+	const searchExamples = ['31:27', 'الرَّحْمَـٰنِ الرَّحِيمِ'];
 	let error = false;
 
 	// Get the search from local storage so we can start off the user
@@ -156,7 +156,7 @@
 	type="text"
 	bind:value={search}
 	on:keyup={handleChange}
-	placeholder="Enter Arabic words (i.e. وَالْحَمْدُ لِلَّهِ) or Surah number and Aya number (i.e. 18:109)"
+	placeholder="Search Quran by phrase (i.e. لرَّحْمَـٰنِ الرَّحِيمِ) or Surah and Aya number (i.e. 31:27)"
 	class="text-center w-full rounded-md text-xl p-4 border-2 uppercase placeholder:text-lg placeholder:normal-case {error ===
 	true
 		? 'border-red-500 focus:border-red-500 border-3'
