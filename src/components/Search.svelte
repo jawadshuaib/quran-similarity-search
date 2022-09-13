@@ -24,7 +24,7 @@
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
 	import { settingsStored } from '../stores/settings-stores';
 
-	const searchExamples = ['18:109', 'الله الرحمن'];
+	const searchExamples = ['18:109', 'الرَّحْمَـٰنِ الرَّحِيمِ'];
 	let error = false;
 
 	// Get the search from local storage so we can start off the user
@@ -138,6 +138,10 @@
 	Search Examples:
 	{#each searchExamples as example, idx}
 		<span
+			on:click={() => {
+				search = example;
+				handleChange({ key: 'Enter' });
+			}}
 			class="text-slate-600 underline decoration-orange-400 hover:text-black hover:decoration-2 hover:cursor-pointer"
 			>{example}</span
 		>

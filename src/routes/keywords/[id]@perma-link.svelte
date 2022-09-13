@@ -26,12 +26,9 @@
 <script>
 	// API
 	import keywordsSearch from '../../api/fetch-keywords-search';
-	import wordInfo from '../../api/fetch-word-info';
 	// Components
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
-	// Scripts
-	import { removeTashkeel } from '../../scripts/common-scripts';
 
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
@@ -79,66 +76,6 @@
 
 			const keywordsArr = keywords.split(',');
 			totalKeywords = keywordsArr.length;
-
-			// const test = async (k) => {
-			// 	const words = await wordInfo(k);
-			// 	return words.result;
-			// };
-			// test(keywordsArr[0]).then((res) => {
-			// 	console.log('response', res);
-			// });
-			// const promises = [];
-			// keywordsArr.forEach((keyword) => {
-			// 	promises.push(wordInfo(keyword));
-			// });
-			// // promises.push(keywordsSearch(keywords));
-
-			// // Resolve all promises at once
-			// const lemmas = [];
-			// Promise.all(promises).then((p) => {
-			// 	// p = p.flat();
-			// 	console.log(p);
-			// 	// console.log(p[0].results.lemma);
-			// 	// console.log(p[1].results.connected_words.split(','));
-			// 	// First grab all the lemmas and their corresponding quranic words
-			// 	for (let i = 0; i < totalKeywords; i++) {
-			// 		// const lemma = p[0].results.lemma;
-			// 		// const connected_words = p[1].results.connected_words.split(',');
-			// 		// const formated = {
-			// 		// 	lemma,
-			// 		// 	connected_words
-			// 		// };
-			// 		// lemmas.push(formated);
-			// 	}
-			// 	// Now grab all the verses returned for the keywords searched
-			// 	// const versez = p[totalKeywords].results.map((verse) => {
-			// 	// 	lemmas.forEach((lemma) => {
-			// 	// 		// If the verse contains the lemma, then highlight it
-			// 	// 		if (verse.quranic_text.includes(lemma.connected_words)) {
-			// 	// 			// Replace the lemma with the highlighted version
-			// 	// 			// verse.quranic_text = verse.minimal.replace(lemma.lemma, `<span class="bg-yellow-200">${lemma.lemma}</span>`);
-			// 	// 			// Replace the connected words with the highlighted version
-			// 	// 			lemma.connected_words.forEach((word) => {
-			// 	// 				verse.quranic_text = verse.quranic_text.replace(
-			// 	// 					word,
-			// 	// 					`<span class="bg-yellow-200">${word}</span>`
-			// 	// 				);
-			// 	// 			});
-			// 	// 		}
-			// 	// 	});
-
-			// 	// return {
-			// 	// 	surah_number: verse.surah_number,
-			// 	// 	aya_number: verse.aya_number,
-			// 	// 	quranic_text: verse.quranic_text,
-			// 	// 	translation: verse.translation
-			// 	// };
-			// });
-
-			// })
-			// .catch((error) => {
-			// 	console.log(`Problem resolving all the errors`, error);
-			// });
 
 			// API is loading
 			apiIsLoading = true;
