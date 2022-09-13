@@ -13,7 +13,8 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 					"minimal": "الحمد لله رب العالمين",
 					"arabic_lemmatized": "حمد الله رب عالم",
 					"arabic_lemmatized_without_stop_words": "حمد الله رب عالم",		
-					"translation": "Praise be to God, Lord of the Worlds."
+					"translation": "Praise be to God, Lord of the Worlds.",
+          "matches": "حمد,الله"
 				}
       ]
   }

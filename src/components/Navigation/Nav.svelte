@@ -31,6 +31,11 @@
 	{/if}
 	<a
 		sveltekit:prefetch
+		href="/settings"
+		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Settings</a
+	>
+	<a
+		sveltekit:prefetch
 		href="/about"
 		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">About</a
 	>

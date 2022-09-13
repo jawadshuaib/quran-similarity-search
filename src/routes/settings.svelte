@@ -41,12 +41,12 @@
 <div class="gap-2 py-2 text-justify">
 	<div class="md:text-xl">
 		<p class="mb-5">
-			By default, this web application displays results based on comparison of verses as translated
-			in <span class="text-orange-600">English</span>.
+			By default, this web application displays results based on comparison of verses without stop
+			words in Arabic.
 		</p>
 		<p class="mb-5">
-			However, translation can never be acutely precise. You can change this methodology to Arabic
-			instead so that the verses are compared to each other based on Arabic itself.
+			However, this can sometimes lead to limited results. You can change this methodology to
+			English instead so that the verses are compared to each other based on their translation.
 		</p>
 		<p class="mb-5">
 			Additionally, you can decide whether to include Arabic stop words (i.e. conjunctions,

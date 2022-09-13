@@ -25,4 +25,5 @@
 	</select>
 	to find similar verses. Read more about this in the
 	<a href="/settings" class="underline">settings</a>.
+	<div>This is the Talal Itani translation of the Qur'an.</div>
 </div>

@@ -24,6 +24,7 @@
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
 	import { settingsStored } from '../stores/settings-stores';
 
+	const searchExamples = ['18:109', 'الله الرحمن'];
 	let error = false;
 
 	// Get the search from local storage so we can start off the user
@@ -132,12 +133,26 @@
 	}
 </script>
 
+<!-- Search Examples-->
+<div class="p3 text-center text-slate-400">
+	Search Examples:
+	{#each searchExamples as example, idx}
+		<span
+			class="text-slate-600 underline decoration-orange-400 hover:text-black hover:decoration-2 hover:cursor-pointer"
+			>{example}</span
+		>
+		{#if idx < searchExamples.length - 1}
+			<span class="text-slate-400"> or </span>
+		{/if}
+	{/each}
+</div>
+
 <input
 	id="search"
 	type="text"
 	bind:value={search}
 	on:keyup={handleChange}
-	placeholder="Enter the Surah Number and Aya Number (i.e. 12:2)"
+	placeholder="Enter Arabic words (i.e. وَالْحَمْدُ لِلَّهِ) or Surah number and Aya number (i.e. 18:109)"
 	class="text-center w-full rounded-md text-xl p-4 border-2 uppercase placeholder:text-lg placeholder:normal-case {error ===
 	true
 		? 'border-red-500 focus:border-red-500 border-3'

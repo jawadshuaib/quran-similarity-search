@@ -62,6 +62,7 @@
 	<!-- Show the verse searched -->
 	<Verse verse={searchedVerseInfo} payloadType="searched" />
 	<!-- Keywords -->
+	<h4 class="mt-5 text-center font-medium leading-tight text-2xl mb-2 text-orange-600">Keywords</h4>
 	<Keywords verse={searchedVerseInfo} />
 
 	<!-- Show similar verses if any are found -->

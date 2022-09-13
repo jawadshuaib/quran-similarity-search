@@ -26,6 +26,7 @@
 <script>
 	// API
 	import keywordsSearch from '../../api/fetch-keywords-search';
+	import wordInfo from '../../api/fetch-word-info';
 	// Components
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
@@ -59,7 +60,6 @@
 			totalKeywords = 0;
 			showError = false;
 
-			// Get the keywords
 			/**
 		 * API: Perform keywords search
 		 * @param {string} keywords
@@ -77,6 +77,69 @@
 			}
 			*/
 
+			const keywordsArr = keywords.split(',');
+			totalKeywords = keywordsArr.length;
+
+			// const test = async (k) => {
+			// 	const words = await wordInfo(k);
+			// 	return words.result;
+			// };
+			// test(keywordsArr[0]).then((res) => {
+			// 	console.log('response', res);
+			// });
+			// const promises = [];
+			// keywordsArr.forEach((keyword) => {
+			// 	promises.push(wordInfo(keyword));
+			// });
+			// // promises.push(keywordsSearch(keywords));
+
+			// // Resolve all promises at once
+			// const lemmas = [];
+			// Promise.all(promises).then((p) => {
+			// 	// p = p.flat();
+			// 	console.log(p);
+			// 	// console.log(p[0].results.lemma);
+			// 	// console.log(p[1].results.connected_words.split(','));
+			// 	// First grab all the lemmas and their corresponding quranic words
+			// 	for (let i = 0; i < totalKeywords; i++) {
+			// 		// const lemma = p[0].results.lemma;
+			// 		// const connected_words = p[1].results.connected_words.split(',');
+			// 		// const formated = {
+			// 		// 	lemma,
+			// 		// 	connected_words
+			// 		// };
+			// 		// lemmas.push(formated);
+			// 	}
+			// 	// Now grab all the verses returned for the keywords searched
+			// 	// const versez = p[totalKeywords].results.map((verse) => {
+			// 	// 	lemmas.forEach((lemma) => {
+			// 	// 		// If the verse contains the lemma, then highlight it
+			// 	// 		if (verse.quranic_text.includes(lemma.connected_words)) {
+			// 	// 			// Replace the lemma with the highlighted version
+			// 	// 			// verse.quranic_text = verse.minimal.replace(lemma.lemma, `<span class="bg-yellow-200">${lemma.lemma}</span>`);
+			// 	// 			// Replace the connected words with the highlighted version
+			// 	// 			lemma.connected_words.forEach((word) => {
+			// 	// 				verse.quranic_text = verse.quranic_text.replace(
+			// 	// 					word,
+			// 	// 					`<span class="bg-yellow-200">${word}</span>`
+			// 	// 				);
+			// 	// 			});
+			// 	// 		}
+			// 	// 	});
+
+			// 	// return {
+			// 	// 	surah_number: verse.surah_number,
+			// 	// 	aya_number: verse.aya_number,
+			// 	// 	quranic_text: verse.quranic_text,
+			// 	// 	translation: verse.translation
+			// 	// };
+			// });
+
+			// })
+			// .catch((error) => {
+			// 	console.log(`Problem resolving all the errors`, error);
+			// });
+
 			// API is loading
 			apiIsLoading = true;
 			keywordsSearch(keywords).then((json) => {
@@ -87,22 +150,17 @@
 					return;
 				}
 
-				const keywordsArr = keywords.split(',');
-				totalKeywords = keywordsArr.length;
 				verses = json.results.map((verse) => {
-					// For each verse, highlight the keywords
-					// We use the minimal verse of the verse since it is easier to match with lemmatized keywords
-					let arr = verse.minimal.split(' ');
-					let arr2 = verse.quranic_text.split(' ');
-					arr.forEach((word, index) => {
-						// Grab word with tashkeel
-						let wordWithTashkeel = arr2[index];
+					const arr = verse.quranic_text.split(' ');
+					const matchesArr = verse.matches.split(',');
 
-						// Remove diacritics before searching for the keywords in the verse
+					arr.forEach((word, index) => {
 						let indexOfKeyword = 0;
-						if (keywordsArr.some((el) => removeTashkeel(word).includes(el))) {
+
+						if (matchesArr.some((match) => word.includes(match))) {
 							// Find the index of the keyword in the verse so we can highlight it
-							indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeel(word).includes(el));
+							indexOfKeyword = matchesArr.findIndex((match) => word.includes(match));
+
 							// Highlight the keyword
 							arr[index] =
 								`<span class="shadow-md rounded p-1 ` +
@@ -112,6 +170,32 @@
 							arr[index] = word;
 						}
 					});
+
+					// --
+					// -- The following method works but I think we can make it better
+					// --
+
+					// For each verse, highlight the keywords
+					// We use the minimal verse of the verse since it is easier to match with lemmatized keywords
+
+					// arr contains each of the words in the verse
+					// let arr = verse.minimal.split(' ');
+
+					// arr.forEach((word, index) => {
+					// 	// Remove diacritics before searching for the keywords in the verse
+					// 	let indexOfKeyword = 0;
+					// 	if (keywordsArr.some((el) => removeTashkeel(word).includes(el))) {
+					// 		// Find the index of the keyword in the verse so we can highlight it
+					// 		indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeel(word).includes(el));
+					// 		// Highlight the keyword
+					// 		arr[index] =
+					// 			`<span class="shadow-md rounded p-1 ` +
+					// 			pickBgColor(indexOfKeyword) +
+					// 			`">${word}</span>`;
+					// 	} else {
+					// 		arr[index] = word;
+					// 	}
+					// });
 
 					const quranic_text = arr.join(' ');
 
