@@ -24,7 +24,7 @@
 	import { setSimilarVerseStore } from '../stores/similar-verse-stores';
 	import { settingsStored } from '../stores/settings-stores';
 
-	const searchExamples = ['31:27', 'الرَّحْمَـٰنِ الرَّحِيمِ'];
+	const searchExamples = ['7:34', 'الرَّحْمَـٰنِ الرَّحِيمِ'];
 	let error = false;
 
 	// Get the search from local storage so we can start off the user
