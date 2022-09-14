@@ -6,7 +6,7 @@ const envVariables = {
 };
 
 const defaultValues = {    
-  translationMethod: 2, // 0: English, 1: Arabic, 2: Arabic without stop words
+  translationMethod: 0, // 0: English, 1: Arabic, 2: Arabic without stop words
   search: '1:1' // Default surah number and aya number when the app loads
 };
 
