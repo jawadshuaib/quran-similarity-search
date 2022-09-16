@@ -38,7 +38,7 @@
 				href="https://github.com/jawadshuaib/quran-similarity-search"
 				class="underline hover:decoration-orange-400">GitHub</a
 			>. Feel free to reach out:
-			<a class="underline decoration-orange-400 decoration-wavy " href="https://j4wad.com"
+			<a class="underline decoration-orange-400 decoration-wavy" href="https://j4wad.com"
 				>Jawad Shuaib</a
 			>.
 		</p>

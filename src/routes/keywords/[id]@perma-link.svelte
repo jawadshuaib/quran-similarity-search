@@ -94,9 +94,14 @@
 					arr.forEach((word, index) => {
 						let indexOfKeyword = 0;
 
-						if (matchesArr.some((match) => word.includes(match))) {
+						if (
+							matchesArr.length > 0 &&
+							matchesArr.some((match) => (match != '' ? word.includes(match) : false))
+						) {
 							// Find the index of the keyword in the verse so we can highlight it
 							indexOfKeyword = matchesArr.findIndex((match) => word.includes(match));
+
+							console.log(verse.surah_number, verse.aya_number, word, indexOfKeyword);
 
 							// Highlight the keyword
 							arr[index] =
