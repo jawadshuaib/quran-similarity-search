@@ -27,6 +27,7 @@
 	// API
 	import keywordsSearch from '../../api/fetch-keywords-search';
 	// Components
+	import LemmaRelatives from '../../components/LemmaRelatives.svelte';
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
 
@@ -100,8 +101,6 @@
 						) {
 							// Find the index of the keyword in the verse so we can highlight it
 							indexOfKeyword = matchesArr.findIndex((match) => word.includes(match));
-
-							console.log(verse.surah_number, verse.aya_number, word, indexOfKeyword);
 
 							// Highlight the keyword
 							arr[index] =
@@ -229,6 +228,9 @@
 		type="notice"
 	/>
 {/if}
+
+<!-- Show related lemmas to the provided lemma -->
+<div><LemmaRelatives lemmas={keywords} /></div>
 
 <!-- Results -->
 {#if verses.length}
