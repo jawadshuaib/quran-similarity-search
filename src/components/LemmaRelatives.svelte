@@ -14,7 +14,7 @@
 				return;
 			}
 
-			keywords = keywords.hasOwnProperty('split') ? keywords.split(',') : [];
+			keywords = keywords.split(',');
 
 			// Reset
 			relatives = [];

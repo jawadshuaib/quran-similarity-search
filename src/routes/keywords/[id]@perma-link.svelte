@@ -24,6 +24,9 @@
 </script>
 
 <script>
+	// Internals
+	import { page } from '$app/stores';
+	// $page.url.pathname
 	// API
 	import keywordsSearch from '../../api/fetch-keywords-search';
 	// Components
@@ -79,7 +82,7 @@
 			}
 			*/
 
-			const keywordsArr = keywords.split(',');
+			const keywordsArr = keywords.hasOwnProperty('split') ? keywords.split(',') : [];
 			totalKeywords = keywordsArr.length;
 
 			// API is loading
@@ -92,7 +95,8 @@
 					return;
 				}
 
-				// Save keywords in the store
+				// Save keywords in the store so we can
+				// use them in history page
 				keywordsArr.length && storedKeywords.set(keywords);
 
 				verses = json.results.map((verse) => {
@@ -111,11 +115,13 @@
 
 							// Highlight the keyword
 							arr[index] =
-								`<span class="shadow-md rounded p-1 ` +
+								`<span class="word shadow-md rounded p-1 hover:cursor-pointer hover:text-orange-600 ` +
 								pickBgColor(indexOfKeyword) +
 								`">${word}</span>`;
 						} else {
-							arr[index] = word;
+							arr[
+								index
+							] = `<span class="word hover:cursor-pointer hover:text-orange-600">${word}</span>`;
 						}
 					});
 
@@ -130,6 +136,22 @@
 				});
 			});
 		})();
+
+	const handleWordClick = (e) => {
+		const classes = e.target.classList;
+		if (classes.contains('word')) {
+			const word = e.target.innerText;
+			console.log('word', word);
+		}
+
+		// const keywordsArr = keywords.split(',');
+		// const indexOfWord = keywordsArr.indexOf(word);
+
+		// if (indexOfWord > -1) {
+		// 	keywordsArr.splice(indexOfWord, 1);
+		// 	keywords = keywordsArr.join(',');
+		// }
+	};
 
 	// Search all keywords other than the ones without 'selected' class
 	function searchAgain(e) {
@@ -223,7 +245,9 @@
 		the above searched keyword{#if totalKeywords > 1}s{/if}:
 	</div>
 	{#each verses as verse}
-		<Verse {verse} payloadType="similar" />
+		<div on:click={handleWordClick}>
+			<Verse {verse} payloadType="similar" />
+		</div>
 	{/each}
 {/if}
 

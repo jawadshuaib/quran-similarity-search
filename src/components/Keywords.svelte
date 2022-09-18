@@ -51,7 +51,7 @@
 	}
 
 	// Select the divs that contain the keywords
-	// We add the 'selected' class to keep track of keywords are selected
+	// We add the 'selected' class to keep track of keywords that are selected
 	function select(e) {
 		if (e.target.classList.contains('keyword')) {
 			const selected = 'selected';
