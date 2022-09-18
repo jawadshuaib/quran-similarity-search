@@ -6,19 +6,18 @@
 	// API
 	import keywordsSearch from '../api/fetch-keywords-search';
 
-	export let verse;
+	export let keywords;
 
 	let canSearch = false;
-	let keywords = [];
 	let el;
-	let totalResults; // Total results for keywords selected
+	let totalResults = 0; // Total results for keywords selected
 	let totalKeywordsSelected; // Total keywords selected (by clicking on their div)
 
-	// Execute the following whenever verse changes
-	$: verse,
+	// Execute the following whenever keywords change
+	$: keywords,
 		((_) => {
-			if (verse.arabic_lemmatized != null) {
-				keywords = verse.arabic_lemmatized.split(' ');
+			if (keywords != null) {
+				keywords = !Array.isArray(keywords) ? keywords.split(' ') : keywords;
 				keywords = [...new Set(keywords)];
 				keywords = keywords.reverse();
 			}

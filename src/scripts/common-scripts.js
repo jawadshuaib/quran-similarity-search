@@ -1,3 +1,7 @@
+function arrayIncludesArray (arr1, arr2) {
+  return arr1.some(r=> arr2.includes(r));
+}
+
 function decodeHtml(html) {
   var txt = document.createElement('textarea');
   txt.innerHTML = html;
@@ -63,4 +67,4 @@ const translationMethodsAvailable = [
 ]
 
 // export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, decodeHtml, isNumberKey };
-export { decodeHtml, isNumberKey, removeTashkeel, isArabic, translationMethodsAvailable, translations };
+export { arrayIncludesArray, decodeHtml, isNumberKey, removeTashkeel, isArabic, translationMethodsAvailable, translations };

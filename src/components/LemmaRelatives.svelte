@@ -1,10 +1,14 @@
 <!-- Show related lemmas to the provided lemma -->
 <script>
+	// API
 	import lemmaRelatives from '../api/fetch-lemma-relatives';
+	// Stores
+	import { setKeywordsPicked } from '../stores/keywords-picked-stores';
 
 	export let keywords;
 
 	$: relatives = [];
+	let keywordsToSearch = [];
 	let promises = [];
 	let resolution;
 
@@ -14,6 +18,7 @@
 				return;
 			}
 
+			// keywords = !Array.isArray(keywords) ? keywords.split(',') : keywords;
 			keywords = keywords.split(',');
 
 			// Reset
@@ -38,22 +43,32 @@
 				relatives = relatives.filter((v, i, a) => a.findIndex((t) => t.lemma === v.lemma) === i);
 			});
 		})();
+
+	const handleWordClick = (e) => {
+		const classes = e.target.classList;
+		if (classes.contains('word')) {
+			const word = e.target.innerText;
+			keywordsToSearch.push(word);
+			// Save in the store - note, it is used in this route itself
+			setKeywordsPicked(keywordsToSearch);
+		}
+	};
 </script>
 
 {#await resolution}
 	<div class="text-center animate-bounce text-3xl">...</div>
 {:then}
 	{#if relatives.length}
+		<!-- Semantically similar keywords -->
 		<div class="text-center">
 			Semantically similar terms:
 			{#each relatives as relative, idx}
-				<span class="text-xl"
-					><a
-						href={relative.lemma}
-						class="hover:underline hover: decoration-orange-400 decoration-2"
-						target="_blank">{relative.lemma}</a
-					></span
-				>
+				<span on:click={handleWordClick} class="word text-xl">
+					{relative.lemma}
+					<!-- <a href={relative.lemma} class="hover:text-orange-600" target="_blank"
+						>{relative.lemma}</a
+					> -->
+				</span>
 				{#if idx < relatives.length - 1}
 					,
 				{/if}

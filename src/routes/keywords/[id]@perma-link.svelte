@@ -24,23 +24,38 @@
 </script>
 
 <script>
-	// Internals
-	import { page } from '$app/stores';
+	// import { page } from '$app/stores';
 	// $page.url.pathname
 	// API
 	import keywordsSearch from '../../api/fetch-keywords-search';
 	// Components
+	import Keywords from '../../components/Keywords.svelte';
 	import LemmaRelatives from '../../components/LemmaRelatives.svelte';
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
+	// Scripts
+	import { arrayIncludesArray } from '../../scripts/common-scripts';
 	// Stores
-	import { storedKeywords } from '../../stores/keywords-stores';
+	import { setKeywordsHistory } from '../../stores/keywords-history-stores';
+	import { keywordsPicked } from '../../stores/keywords-picked-stores';
 
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
 	// Assign to another variable to prevent reactivity
 	// We don't want the list of keywords to disappear each time the user de-selects a keyword
 	let fixedKeywords = keywords;
+
+	let keywordsToSearch = [];
+	// The following subscribe will pick up keywords from LemmaRelatives component
+	keywordsPicked.subscribe((value) => {
+		if (value != '') {
+			console.log(keywordsToSearch, value);
+			if (!arrayIncludesArray(keywordsToSearch, value)) {
+				keywordsToSearch.push(...value);
+				keywordsToSearch = keywordsToSearch;
+			}
+		}
+	});
 
 	let totalKeywords = 0;
 	let apiIsLoading;
@@ -97,7 +112,7 @@
 
 				// Save keywords in the store so we can
 				// use them in history page
-				keywordsArr.length && storedKeywords.set(keywords);
+				keywordsArr.length && setKeywordsHistory(keywords);
 
 				verses = json.results.map((verse) => {
 					const arr = verse.quranic_text.split(' ');
@@ -141,16 +156,9 @@
 		const classes = e.target.classList;
 		if (classes.contains('word')) {
 			const word = e.target.innerText;
-			console.log('word', word);
+			keywordsToSearch.push(word);
+			keywordsToSearch = keywordsToSearch;
 		}
-
-		// const keywordsArr = keywords.split(',');
-		// const indexOfWord = keywordsArr.indexOf(word);
-
-		// if (indexOfWord > -1) {
-		// 	keywordsArr.splice(indexOfWord, 1);
-		// 	keywords = keywordsArr.join(',');
-		// }
 	};
 
 	// Search all keywords other than the ones without 'selected' class
@@ -234,6 +242,11 @@
 
 <!-- Show related lemmas to the provided lemma -->
 <div><LemmaRelatives {keywords} /></div>
+
+<!-- Selected keywords to search -->
+{#if keywordsToSearch.length}
+	<Keywords keywords={keywordsToSearch.join(' ')} />
+{/if}
 
 <!-- Results -->
 {#if verses.length}
