@@ -3,19 +3,18 @@
 
 	// Internal
 	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	// API
 	import keywordsSearch from '../api/fetch-keywords-search';
 
 	export let keywords;
-	export let preSelected;
 
-	let els;
-	onMount(() => {
-		if (els == null) {
-			els = el.getElementsByClassName('keyword');
-		}
-	});
+	// let els;
+	// onMount(() => {
+	// 	if (els == null) {
+	// 		els = el.getElementsByClassName('keyword');
+	// 	}
+	// });
 
 	let canSearch = false;
 	let el;
@@ -39,12 +38,6 @@
 				// Strangely enough, I have to do this twice for it to de-select all selected keywords
 				deselectAll();
 				deselectAll();
-			}
-
-			if (preSelected == 'true') {
-				if (els !== undefined) {
-					selectAll(els);
-				}
 			}
 		})();
 
@@ -112,13 +105,13 @@
 		});
 	}
 
-	function selectAll(els) {
-		[].forEach.call(els, function (el) {
-			select({ target: el });
-		});
+	// function selectAll(els) {
+	// 	[].forEach.call(els, function (el) {
+	// 		select({ target: el });
+	// 	});
 
-		totalResultsForKeywords();
-	}
+	// 	totalResultsForKeywords();
+	// }
 </script>
 
 <div class="border-2 border-slate-50 rounded p-5 items-center">

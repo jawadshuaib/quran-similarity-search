@@ -24,8 +24,6 @@
 </script>
 
 <script>
-	// import { page } from '$app/stores';
-	// $page.url.pathname
 	// API
 	import keywordsSearch from '../../api/fetch-keywords-search';
 	// Components
@@ -35,7 +33,7 @@
 	import Verse from '../../components/Verse.svelte';
 	// Stores
 	import { setKeywordsHistory } from '../../stores/keywords-history-stores';
-	import { setKeywordsPicked, keywordsPicked } from '../../stores/keywords-picked-stores';
+	import { keywordsPicked } from '../../stores/keywords-picked-stores';
 
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
@@ -111,7 +109,8 @@
 
 				// Save keywords in the store so we can
 				// use them in history page
-				keywordsArr.length && setKeywordsHistory(keywords);
+				// keywordsArr.length && setKeywordsHistory(keywords);
+				setKeywordsHistory(keywords);
 
 				verses = json.results.map((verse) => {
 					const arr = verse.quranic_text.split(' ');
@@ -157,7 +156,7 @@
 			const word = e.target.innerText;
 			keywordsToSearch.push(word);
 			keywordsToSearch = keywordsToSearch;
-			setKeywordsPicked(keywordsToSearch);
+			// setKeywordsPicked(keywordsToSearch);
 		}
 	};
 
@@ -246,7 +245,7 @@
 <!-- Selected keywords to search -->
 {#if keywordsToSearch.length}
 	<h4 class="mt-5 text-center font-medium leading-tight text-2xl mb-2 text-orange-600">Keywords</h4>
-	<Keywords keywords={keywordsToSearch.join(' ')} preSelected="false" />
+	<Keywords keywords={keywordsToSearch.join(' ')} />
 {/if}
 
 <!-- Results -->

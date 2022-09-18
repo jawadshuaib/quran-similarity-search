@@ -21,7 +21,9 @@ const setKeywordsHistory = (keywords) => {
 // Anytime the store changes, update the local storage value.
 keywordsHistory.subscribe((value) => {
   if (browser) {    
-    saveKeywordsToLocalStorage(value);
+    if (value != null) {
+      saveKeywordsToLocalStorage(value);
+    }    
   }
 });
 

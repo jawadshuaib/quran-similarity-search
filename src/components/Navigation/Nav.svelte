@@ -1,22 +1,31 @@
 <script>
 	// Stores
 	import { didSaveVerse, verseSaveStatus } from '../../stores/did-save-verse-stores';
+	import { keywordsHistory } from '../../stores/keywords-history-stores';
 
-	let el;
+	let elSaved;
+	let showHistory = false;
 
 	// From store - updated dynamically as soon as the verse is added or removed
+	// We use this to animate the "Saved" nav item
 	verseSaveStatus.subscribe((state) => {
 		if (state) {
-			if (el) {
+			if (elSaved) {
 				const css = ['animate-pulse', 'text-orange-600'];
-				el.classList.add(...css);
+				elSaved.classList.add(...css);
 				setTimeout(() => {
-					el.classList.remove(...css);
+					elSaved.classList.remove(...css);
 				}, 500);
 			}
 
 			// Reset the store
 			didSaveVerse(false);
+		}
+	});
+
+	keywordsHistory.subscribe((keywords) => {
+		if (keywords != null) {
+			showHistory = true;
 		}
 	});
 
@@ -41,24 +50,32 @@
 </script>
 
 <nav class="flex justify-center w-full">
+	<!-- Search -->
 	<a
 		sveltekit:prefetch
 		href="/"
 		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Search</a
 	>
-
+	<!-- Saved -->
 	<a
 		sveltekit:prefetch
 		href="/saved"
-		bind:this={el}
+		bind:this={elSaved}
 		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Saved</a
 	>
-
+	<!-- History -->
+	{#if showHistory}
+		<a href="/history" class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2"
+			>History</a
+		>
+	{/if}
+	<!-- Settings -->
 	<a
 		sveltekit:prefetch
 		href="/settings"
 		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Settings</a
 	>
+	<!-- About -->
 	<a
 		sveltekit:prefetch
 		href="/about"
