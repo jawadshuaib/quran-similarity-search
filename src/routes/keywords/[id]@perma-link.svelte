@@ -30,10 +30,14 @@
 	import LemmaRelatives from '../../components/LemmaRelatives.svelte';
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
+	// Stores
+	import { storedKeywords } from '../../stores/keywords-stores';
 
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
-	let fixedKeywords = keywords; // Assign to another variable to prevent reactivity
+	// Assign to another variable to prevent reactivity
+	// We don't want the list of keywords to disappear each time the user de-selects a keyword
+	let fixedKeywords = keywords;
 
 	let totalKeywords = 0;
 	let apiIsLoading;
@@ -88,6 +92,9 @@
 					return;
 				}
 
+				// Save keywords in the store
+				keywordsArr.length && storedKeywords.set(keywords);
+
 				verses = json.results.map((verse) => {
 					const arr = verse.quranic_text.split(' ');
 					const matchesArr = verse.matches.split(',');
@@ -111,32 +118,6 @@
 							arr[index] = word;
 						}
 					});
-
-					// --
-					// -- The following method works but I think we can make it better
-					// --
-
-					// For each verse, highlight the keywords
-					// We use the minimal verse of the verse since it is easier to match with lemmatized keywords
-
-					// arr contains each of the words in the verse
-					// let arr = verse.minimal.split(' ');
-
-					// arr.forEach((word, index) => {
-					// 	// Remove diacritics before searching for the keywords in the verse
-					// 	let indexOfKeyword = 0;
-					// 	if (keywordsArr.some((el) => removeTashkeel(word).includes(el))) {
-					// 		// Find the index of the keyword in the verse so we can highlight it
-					// 		indexOfKeyword = keywordsArr.findIndex((el) => removeTashkeel(word).includes(el));
-					// 		// Highlight the keyword
-					// 		arr[index] =
-					// 			`<span class="shadow-md rounded p-1 ` +
-					// 			pickBgColor(indexOfKeyword) +
-					// 			`">${word}</span>`;
-					// 	} else {
-					// 		arr[index] = word;
-					// 	}
-					// });
 
 					const quranic_text = arr.join(' ');
 
@@ -230,7 +211,7 @@
 {/if}
 
 <!-- Show related lemmas to the provided lemma -->
-<div><LemmaRelatives lemmas={keywords} /></div>
+<div><LemmaRelatives {keywords} /></div>
 
 <!-- Results -->
 {#if verses.length}

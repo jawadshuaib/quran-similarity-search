@@ -2,34 +2,40 @@
 <script>
 	import lemmaRelatives from '../api/fetch-lemma-relatives';
 
-	export let lemmas;
+	export let keywords;
 
 	$: relatives = [];
 	let promises = [];
 	let resolution;
 
-	$: lemmas,
+	$: keywords,
 		((_) => {
-			if (lemmas == '') {
+			if (keywords == '') {
 				return;
 			}
-			lemmas = lemmas.split(',');
+
+			keywords = keywords.hasOwnProperty('split') ? keywords.split(',') : [];
+
 			// Reset
 			relatives = [];
 			promises = [];
 
 			// Fetch related lemmas
-			lemmas.forEach((lemma) => {
-				promises.push(lemmaRelatives(lemma));
+			keywords.forEach((keyword) => {
+				promises.push(lemmaRelatives(keyword));
 			});
 
 			resolution = Promise.all(promises).then((results) => {
 				results.forEach((json) => {
 					const result = json.result;
+
 					result.lemma_relatives.split(',').forEach((relative) => {
-						relatives.push(relative);
+						relatives.push({ lemma: relative, url: `keywords/${relative}` });
 					});
 				});
+
+				// Remove duplicates
+				relatives = relatives.filter((v, i, a) => a.findIndex((t) => t.lemma === v.lemma) === i);
 			});
 		})();
 </script>
@@ -39,9 +45,15 @@
 {:then}
 	{#if relatives.length}
 		<div class="text-center">
-			Possible related terms:
+			Semantically similar terms:
 			{#each relatives as relative, idx}
-				<span class="text-xl">{relative}</span>
+				<span class="text-xl"
+					><a
+						href={relative.lemma}
+						class="hover:underline hover: decoration-orange-400 decoration-2"
+						target="_blank">{relative.lemma}</a
+					></span
+				>
 				{#if idx < relatives.length - 1}
 					,
 				{/if}

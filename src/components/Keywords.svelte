@@ -1,4 +1,6 @@
 <script>
+	// -- Subsection within the VersesContainer page --
+
 	// Internal
 	import { goto } from '$app/navigation';
 	// API

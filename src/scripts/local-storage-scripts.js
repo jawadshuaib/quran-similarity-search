@@ -1,3 +1,24 @@
+// Save keywords searched
+function saveKeywordsToLocalStorage(keywords) {
+  const stored = getKeyWordsFromLocalStorage();
+  if (stored != null) {
+    // Save stored in keywords
+    keywords = stored + ',' + keywords;
+    // Remove duplicates from keywords string
+    keywords = keywords.split(',').filter(function(item, pos, self) {
+      return self.indexOf(item) == pos;
+    }).join(',');
+  }
+
+  if (keywords != null) {
+    localStorage.setItem('keywords', keywords);
+  }
+}
+
+function getKeyWordsFromLocalStorage() {
+  return localStorage.getItem('keywords');
+}
+
 // Save a list of all saved verses to local storage
 // Save verse separated by commas (i.e. 103:1,11:2,2:56)
 function saveVerse(surahNumber=0, ayaNumber=0) {
@@ -67,4 +88,16 @@ function saveTranslationMethodToLocalStorage(id) {
 	localStorage.setItem('translation_method', id);
 }
 
-export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, getTranslationMethodFromLocalStorage, saveTranslationMethodToLocalStorage };
+export { 
+  areThereAnySavedVerses, 
+  isVerseSaved,
+  getSavedVerses, 
+  saveVerse, 
+  removeVerse, 
+  getSearchFromLocalStorage, 
+  saveSearchToLocalStorage, 
+  getTranslationMethodFromLocalStorage, 
+  saveTranslationMethodToLocalStorage,
+  saveKeywordsToLocalStorage,
+  getKeyWordsFromLocalStorage
+};
