@@ -33,11 +33,9 @@
 	import LemmaRelatives from '../../components/LemmaRelatives.svelte';
 	import Error from '../../components/Utilities/Error.svelte';
 	import Verse from '../../components/Verse.svelte';
-	// Scripts
-	import { arrayIncludesArray } from '../../scripts/common-scripts';
 	// Stores
 	import { setKeywordsHistory } from '../../stores/keywords-history-stores';
-	import { keywordsPicked } from '../../stores/keywords-picked-stores';
+	import { setKeywordsPicked, keywordsPicked } from '../../stores/keywords-picked-stores';
 
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
@@ -47,13 +45,14 @@
 
 	let keywordsToSearch = [];
 	// The following subscribe will pick up keywords from LemmaRelatives component
-	keywordsPicked.subscribe((value) => {
-		if (value != '') {
-			console.log(keywordsToSearch, value);
-			if (!arrayIncludesArray(keywordsToSearch, value)) {
-				keywordsToSearch.push(...value);
-				keywordsToSearch = keywordsToSearch;
-			}
+	keywordsPicked.subscribe((values) => {
+		if (values.length) {
+			values.forEach((v) => {
+				if (!keywordsToSearch.includes(v)) {
+					keywordsToSearch.push(v);
+				}
+			});
+			keywordsToSearch = keywordsToSearch;
 		}
 	});
 
@@ -158,6 +157,7 @@
 			const word = e.target.innerText;
 			keywordsToSearch.push(word);
 			keywordsToSearch = keywordsToSearch;
+			setKeywordsPicked(keywordsToSearch);
 		}
 	};
 
@@ -245,7 +245,8 @@
 
 <!-- Selected keywords to search -->
 {#if keywordsToSearch.length}
-	<Keywords keywords={keywordsToSearch.join(' ')} />
+	<h4 class="mt-5 text-center font-medium leading-tight text-2xl mb-2 text-orange-600">Keywords</h4>
+	<Keywords keywords={keywordsToSearch.join(' ')} preSelected="false" />
 {/if}
 
 <!-- Results -->

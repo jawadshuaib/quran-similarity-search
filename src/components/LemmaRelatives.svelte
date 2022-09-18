@@ -63,11 +63,11 @@
 		<div class="text-center">
 			Semantically similar terms:
 			{#each relatives as relative, idx}
-				<span on:click={handleWordClick} class="word text-xl">
+				<span
+					on:click={handleWordClick}
+					class="word text-xl hover:cursor-pointer hover:text-orange-600"
+				>
 					{relative.lemma}
-					<!-- <a href={relative.lemma} class="hover:text-orange-600" target="_blank"
-						>{relative.lemma}</a
-					> -->
 				</span>
 				{#if idx < relatives.length - 1}
 					,

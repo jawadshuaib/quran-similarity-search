@@ -9,7 +9,7 @@
 	import Transition from '../components/Transition.svelte';
 </script>
 
-<svelte:head><title>Linguistically Similar Verses in the Quran</title></svelte:head>
+<svelte:head><title>Linguistic Analysis of the Quran</title></svelte:head>
 <!-- Show this bar when in dev mode -->
 <DevMode />
 <div

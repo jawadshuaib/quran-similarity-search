@@ -1,12 +1,21 @@
 <script>
-	// -- Subsection within the VersesContainer page --
+	// -- Subsection within the VersesContainer and kewords/[id] page --
 
 	// Internal
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 	// API
 	import keywordsSearch from '../api/fetch-keywords-search';
 
 	export let keywords;
+	export let preSelected;
+
+	let els;
+	onMount(() => {
+		if (els == null) {
+			els = el.getElementsByClassName('keyword');
+		}
+	});
 
 	let canSearch = false;
 	let el;
@@ -30,6 +39,12 @@
 				// Strangely enough, I have to do this twice for it to de-select all selected keywords
 				deselectAll();
 				deselectAll();
+			}
+
+			if (preSelected == 'true') {
+				if (els !== undefined) {
+					selectAll(els);
+				}
 			}
 		})();
 
@@ -95,6 +110,14 @@
 			el.classList.remove('bg-orange-100');
 			el.classList.remove('selected');
 		});
+	}
+
+	function selectAll(els) {
+		[].forEach.call(els, function (el) {
+			select({ target: el });
+		});
+
+		totalResultsForKeywords();
 	}
 </script>
 

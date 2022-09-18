@@ -8,7 +8,8 @@ import { writable } from 'svelte/store';
  */
 
  const setKeywordsPicked = (keywords) => {
-  keywordsPicked.set(keywords);
+  keywordsPicked.set(keywords);  
+  console.log('store', keywords);
 }
 
 let keywordsPicked = writable([]);
