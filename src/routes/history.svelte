@@ -8,8 +8,10 @@
 	import { keywordsHistory } from '../stores/keywords-history-stores';
 	// Scripts
 	import { getKeyWordsFromLocalStorage } from '../scripts/local-storage-scripts';
+	import About from './about.svelte';
 
 	let keywords = [];
+
 	const defaultNote = {
 		title: 'No History Found',
 		description: 'You have not searched any keywords yet.',
@@ -20,11 +22,11 @@
 	if (keywordsFromLocalStorage != null) {
 		keywords = getKeyWordsFromLocalStorage().split(',');
 	} else {
-		keywordsHistory.subscribe((k) => {
-			if (k != null) {
-				keywords = k.split(',');
-			}
-		});
+		// keywordsHistory.subscribe((k) => {
+		// 	if (k != null) {
+		// 		keywords = k.split(',');
+		// 	}
+		// });
 	}
 </script>
 

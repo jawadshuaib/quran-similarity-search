@@ -66,7 +66,7 @@
 		<!-- Get each saved verse -->
 	{:then}
 		{#each verses as verse}
-			<Verse {verse} payloadType="saved" opacity="100" />
+			<Verse {verse} payloadType="saved" />
 		{/each}
 	{:catch error}
 		<p>Error: {error}</p>
