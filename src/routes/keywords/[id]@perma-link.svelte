@@ -113,8 +113,8 @@
 				setKeywordsHistory(keywords);
 
 				verses = json.results.map((verse) => {
-					const arr = verse.quranic_text.split(' ');
-					const matchesArr = verse.matches.split(',');
+					const arr = verse.quranic_text != undefined ? verse.quranic_text.split(' ') : [];
+					const matchesArr = verse.matches != undefined ? verse.matches.split(',') : [];
 
 					arr.forEach((word, index) => {
 						let indexOfKeyword = 0;
