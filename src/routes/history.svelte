@@ -28,11 +28,11 @@
 	}
 </script>
 
+<svelte:head><title>History of Keywords Searched</title></svelte:head>
+
 {#if keywords.length}
-	<h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Search History</h1>
-	<div class="">
-		<Keywords {keywords} />
-	</div>
+	<h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">History</h1>
+	<Keywords {keywords} />
 {:else}
 	<Error {...defaultNote} />
 {/if}
