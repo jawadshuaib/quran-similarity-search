@@ -20,6 +20,7 @@
 	let el;
 	let totalResults = 0; // Total results for keywords selected
 	let totalKeywordsSelected; // Total keywords selected (by clicking on their div)
+	let blur = false;
 
 	// Execute the following whenever keywords change
 	$: keywords,
@@ -48,8 +49,9 @@
 		totalKeywordsSelected = keywords.split(',').length;
 
 		if (totalKeywordsSelected > 0) {
-			totalResults = 0;
+			blur = true;
 			keywordsSearch(keywords).then((json) => {
+				blur = false;
 				totalResults = 0;
 				if (json.results !== undefined && json.results.length > 0) {
 					totalResults = json.results.length;
@@ -144,7 +146,7 @@
 	<!-- Show user pre-emptively how many results the combination of keywords selected will show -->
 	<div class="mt-2">
 		{#if totalResults > 0}
-			<div class="text-slate-400 text-center">
+			<div class="text-slate-400 text-center {blur ? 'blur' : ''}">
 				{#if totalKeywordsSelected > 1}
 					Found <span class="font-medium"
 						>{totalResults} result{#if totalResults > 1}s{/if}</span
