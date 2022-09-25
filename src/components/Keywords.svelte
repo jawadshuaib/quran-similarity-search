@@ -48,6 +48,7 @@
 		totalKeywordsSelected = keywords.split(',').length;
 
 		if (totalKeywordsSelected > 0) {
+			totalResults = 0;
 			keywordsSearch(keywords).then((json) => {
 				totalResults = 0;
 				if (json.results !== undefined && json.results.length > 0) {

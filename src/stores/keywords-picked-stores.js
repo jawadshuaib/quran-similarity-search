@@ -4,12 +4,11 @@ import { writable } from 'svelte/store';
 
 /**
  * Keep track of the keywords picked by the user
- * @param {Array} keywords
+ * @param {String} keyword
  */
 
  const setKeywordsPicked = (keywords) => {
-  keywordsPicked.set(keywords);  
-  console.log('store', keywords);
+  keywordsPicked.set(keywords);    
 }
 
 let keywordsPicked = writable([]);
