@@ -1,0 +1,565 @@
+{
+  "info": {
+    "name": "Arabic (Simple)",						
+    "source": "https://tanzil.net/download/",
+    "method": "cosine_similarity_arabic_lemmatized_without_stop_words",
+    "surah_number": "1",
+    "aya_number": "1",
+    "quranic_text": "بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ",
+    "minimal": "بسم الله الرحمن الرحيم",
+    "arabic_lemmatized": "بسم الله رحمن رحيم",
+    "arabic_lemmatized_without_stop_words": "بسم الله رحمن رحيم",
+    "translation": "In the name of God, the Gracious, the Merciful."
+  },
+  "similar": [
+    { 
+      "surah_number": 27, 
+      "aya_number": 30,
+      "quranic_text": "إِنَّهُ مِن سُلَيْمَانَ وَإِنَّهُ بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ",		
+      "minimal": "إنه من سليمان وإنه بسم الله الرحمن الرحيم",
+      "arabic_lemmatized": "إن من سليمان إن بسم الله رحمن رحيم",
+      "arabic_lemmatized_without_stop_words": "سليمان بسم الله رحمن رحيم",
+      "translation": "It is from Solomon, and it is, &lsquo;In the Name of God, the Gracious, the Merciful.",
+      "similarity": 0.8944271909999159
+    },
+    
+    { 
+      "surah_number": 1, 
+      "aya_number": 3,
+      "quranic_text": "الرَّحْمَـٰنِ الرَّحِيمِ",		
+      "minimal": "الرحمن الرحيم",
+      "arabic_lemmatized": "رحمن رحيم",
+      "arabic_lemmatized_without_stop_words": "رحمن رحيم",
+      "translation": "The Most Gracious, the Most Merciful.",
+      "similarity": 0.7071067811865475
+    },
+    
+    { 
+      "surah_number": 41, 
+      "aya_number": 2,
+      "quranic_text": "تَنزِيلٌ مِّنَ الرَّحْمَـٰنِ الرَّحِيمِ",		
+      "minimal": "تنزيل من الرحمن الرحيم",
+      "arabic_lemmatized": "تنزيل من رحمن رحيم",
+      "arabic_lemmatized_without_stop_words": "تنزيل رحمن رحيم",
+      "translation": "A revelation from the Most Gracious, the Most Merciful.",
+      "similarity": 0.5773502691896258
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 106,
+      "quranic_text": "وَاسْتَغْفِرِ اللَّهَ ۖ إِنَّ اللَّهَ كَانَ غَفُورًا رَّحِيمًا",		
+      "minimal": "واستغفر الله إن الله كان غفورا رحيما",
+      "arabic_lemmatized": "استغفر الله إن الله كان غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "استغفر الله الله غفور رحيم",
+      "translation": "And ask God for forgiveness. God is Forgiver and Merciful.",
+      "similarity": 0.5669467095138409
+    },
+    
+    { 
+      "surah_number": 59, 
+      "aya_number": 22,
+      "quranic_text": "هُوَ اللَّهُ الَّذِي لَا إِلَـٰهَ إِلَّا هُوَ ۖ عَالِمُ الْغَيْبِ وَالشَّهَادَةِ ۖ هُوَ الرَّحْمَـٰنُ الرَّحِيمُ",		
+      "minimal": "هو الله الذي لا إله إلا هو عالم الغيب والشهادة هو الرحمن الرحيم",
+      "arabic_lemmatized": "هو الله الذي لا إله إلا هو عالم غيب شهادة هو رحمن رحيم",
+      "arabic_lemmatized_without_stop_words": "الله إله عالم غيب شهادة رحمن رحيم",
+      "translation": "He is God. There is no god but He, the Knower of secrets and declarations. He is the Compassionate, the Merciful.",
+      "similarity": 0.5669467095138409
+    },
+    
+    { 
+      "surah_number": 60, 
+      "aya_number": 7,
+      "quranic_text": "عَسَى اللَّهُ أَن يَجْعَلَ بَيْنَكُمْ وَبَيْنَ الَّذِينَ عَادَيْتُم مِّنْهُم مَّوَدَّةً ۚ وَاللَّهُ قَدِيرٌ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "عسى الله أن يجعل بينكم وبين الذين عاديتم منهم مودة والله قدير والله غفور رحيم",
+      "arabic_lemmatized": "عسى الله أن جعل بين بين الذي عادى من مودة الله قدير الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "الله عادى مودة الله قدير الله غفور رحيم",
+      "translation": "Perhaps God will plant affection between you and those of them you consider enemies. God is Capable. God is Forgiving and Merciful.",
+      "similarity": 0.5345224838248488
+    },
+    
+    { 
+      "surah_number": 9, 
+      "aya_number": 27,
+      "quranic_text": "ثُمَّ يَتُوبُ اللَّهُ مِن بَعْدِ ذَٰلِكَ عَلَىٰ مَن يَشَاءُ ۗ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ثم يتوب الله من بعد ذلك على من يشاء والله غفور رحيم",
+      "arabic_lemmatized": "ثم تاب الله من بعد ذلك على من شاء الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "تاب الله شاء الله غفور رحيم",
+      "translation": "Then, after that, God will relent towards whomever He wills. God is Forgiving and Merciful.",
+      "similarity": 0.5303300858899106
+    },
+    
+    { 
+      "surah_number": 16, 
+      "aya_number": 18,
+      "quranic_text": "وَإِن تَعُدُّوا نِعْمَةَ اللَّهِ لَا تُحْصُوهَا ۗ إِنَّ اللَّهَ لَغَفُورٌ رَّحِيمٌ",		
+      "minimal": "وإن تعدوا نعمة الله لا تحصوها إن الله لغفور رحيم",
+      "arabic_lemmatized": "إن عدا نعمة الله لا تحصو إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "نعمة الله تحصو الله غفور رحيم",
+      "translation": "And if you tried to enumerate the favors of God, you will not be able to count them. God is Forgiving and Merciful.",
+      "similarity": 0.5303300858899106
+    },
+    
+    { 
+      "surah_number": 24, 
+      "aya_number": 20,
+      "quranic_text": "وَلَوْلَا فَضْلُ اللَّهِ عَلَيْكُمْ وَرَحْمَتُهُ وَأَنَّ اللَّهَ رَءُوفٌ رَّحِيمٌ",		
+      "minimal": "ولولا فضل الله عليكم ورحمته وأن الله رءوف رحيم",
+      "arabic_lemmatized": "لولا فضل الله على رحمة أن الله رءوف رحيم",
+      "arabic_lemmatized_without_stop_words": "فضل الله رحمة الله رءوف رحيم",
+      "translation": "Were it not for God&rsquo;s grace upon you, and His mercy, and that God is Clement and Merciful.",
+      "similarity": 0.5303300858899106
+    },
+    
+    { 
+      "surah_number": 2, 
+      "aya_number": 192,
+      "quranic_text": "فَإِنِ انتَهَوْا فَإِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "فإن انتهوا فإن الله غفور رحيم",
+      "arabic_lemmatized": "إن انتهى إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "انتهى الله غفور رحيم",
+      "translation": "But if they cease, then God is Forgiving and Merciful.",
+      "similarity": 0.5
+    },
+    
+    { 
+      "surah_number": 5, 
+      "aya_number": 74,
+      "quranic_text": "أَفَلَا يَتُوبُونَ إِلَى اللَّهِ وَيَسْتَغْفِرُونَهُ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "أفلا يتوبون إلى الله ويستغفرونه والله غفور رحيم",
+      "arabic_lemmatized": "أفل تاب إلى الله ويستغفرونه الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "أفل تاب الله ويستغفرونه الله غفور رحيم",
+      "translation": "Will they not repent to God and ask His forgiveness? God is Forgiving and Merciful.",
+      "similarity": 0.5
+    },
+    
+    { 
+      "surah_number": 5, 
+      "aya_number": 98,
+      "quranic_text": "اعْلَمُوا أَنَّ اللَّهَ شَدِيدُ الْعِقَابِ وَأَنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "اعلموا أن الله شديد العقاب وأن الله غفور رحيم",
+      "arabic_lemmatized": "اعلم أن الله شديد عقاب أن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "اعلم الله شديد عقاب الله غفور رحيم",
+      "translation": "Know that God is severe in retribution, and that God is Forgiving and Merciful.",
+      "similarity": 0.5
+    },
+    
+    { 
+      "surah_number": 11, 
+      "aya_number": 41,
+      "quranic_text": "وَقَالَ ارْكَبُوا فِيهَا بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا ۚ إِنَّ رَبِّي لَغَفُورٌ رَّحِيمٌ",		
+      "minimal": "وقال اركبوا فيها بسم الله مجراها ومرساها إن ربي لغفور رحيم",
+      "arabic_lemmatized": "قال اركب في بسم الله مجرى مرسا إن رب غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "قال اركب بسم الله مجرى مرسا رب غفور رحيم",
+      "translation": "He said, &ldquo;Embark in it. In the name of God shall be its sailing and its anchorage. My Lord is indeed Forgiving and Merciful.&rdquo;",
+      "similarity": 0.5
+    },
+    
+    { 
+      "surah_number": 44, 
+      "aya_number": 42,
+      "quranic_text": "إِلَّا مَن رَّحِمَ اللَّهُ ۚ إِنَّهُ هُوَ الْعَزِيزُ الرَّحِيمُ",		
+      "minimal": "إلا من رحم الله إنه هو العزيز الرحيم",
+      "arabic_lemmatized": "إلا من رحم الله إن هو عزيز رحيم",
+      "arabic_lemmatized_without_stop_words": "رحم الله عزيز رحيم",
+      "translation": "Except for him upon whom God has mercy. He is the Mighty, the Merciful.",
+      "similarity": 0.5
+    },
+    
+    { 
+      "surah_number": 55, 
+      "aya_number": 1,
+      "quranic_text": "الرَّحْمَـٰنُ",		
+      "minimal": "الرحمن",
+      "arabic_lemmatized": "رحمن",
+      "arabic_lemmatized_without_stop_words": "رحمن",
+      "translation": "The Compassionate.",
+      "similarity": 0.5
+    },
+    
+    { 
+      "surah_number": 2, 
+      "aya_number": 199,
+      "quranic_text": "ثُمَّ أَفِيضُوا مِنْ حَيْثُ أَفَاضَ النَّاسُ وَاسْتَغْفِرُوا اللَّهَ ۚ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ثم أفيضوا من حيث أفاض الناس واستغفروا الله إن الله غفور رحيم",
+      "arabic_lemmatized": "ثم أفيض من حيث أفاض ناس استغفر الله إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "أفيض أفاض ناس استغفر الله الله غفور رحيم",
+      "translation": "Then disperse from where the people disperse, and ask God for forgiveness. God is Most Forgiving, Most Merciful.",
+      "similarity": 0.4743416490252569
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 110,
+      "quranic_text": "وَمَن يَعْمَلْ سُوءًا أَوْ يَظْلِمْ نَفْسَهُ ثُمَّ يَسْتَغْفِرِ اللَّهَ يَجِدِ اللَّهَ غَفُورًا رَّحِيمًا",		
+      "minimal": "ومن يعمل سوءا أو يظلم نفسه ثم يستغفر الله يجد الله غفورا رحيما",
+      "arabic_lemmatized": "من عمل سوء أو يظلم نفس ثم استغفر الله وجد الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "عمل سوء يظلم استغفر الله الله غفور رحيم",
+      "translation": "Whoever commits evil, or wrongs his soul, then implores God for forgiveness, will find God Forgiving and Merciful.",
+      "similarity": 0.4743416490252569
+    },
+    
+    { 
+      "surah_number": 9, 
+      "aya_number": 104,
+      "quranic_text": "أَلَمْ يَعْلَمُوا أَنَّ اللَّهَ هُوَ يَقْبَلُ التَّوْبَةَ عَنْ عِبَادِهِ وَيَأْخُذُ الصَّدَقَاتِ وَأَنَّ اللَّهَ هُوَ التَّوَّابُ الرَّحِيمُ",		
+      "minimal": "ألم يعلموا أن الله هو يقبل التوبة عن عباده ويأخذ الصدقات وأن الله هو التواب الرحيم",
+      "arabic_lemmatized": "ألم علم أن الله هو قبل توبة عن عباد أخذ صدقة أن الله هو تواب رحيم",
+      "arabic_lemmatized_without_stop_words": "ألم الله توبة عباد صدقة الله تواب رحيم",
+      "translation": "Do they not know that God accepts the repentance of His servants, and that He receives the contributions, and that God is the Acceptor of Repentance, the Merciful?",
+      "similarity": 0.4743416490252569
+    },
+    
+    { 
+      "surah_number": 2, 
+      "aya_number": 218,
+      "quranic_text": "إِنَّ الَّذِينَ آمَنُوا وَالَّذِينَ هَاجَرُوا وَجَاهَدُوا فِي سَبِيلِ اللَّهِ أُولَـٰئِكَ يَرْجُونَ رَحْمَتَ اللَّهِ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إن الذين آمنوا والذين هاجروا وجاهدوا في سبيل الله أولئك يرجون رحمت الله والله غفور رحيم",
+      "arabic_lemmatized": "إن الذي آمن الذي هاجر جاهد في سبيل الله أولائك رجا رحمة الله الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "آمن هاجر جاهد سبيل الله أولائك رجا رحمة الله الله غفور رحيم",
+      "translation": "Those who believed, and those who migrated and fought for the sake of God&mdash;those look forward to God&rsquo;s mercy. God is Forgiving and Merciful.",
+      "similarity": 0.47140452079103173
+    },
+    
+    { 
+      "surah_number": 9, 
+      "aya_number": 99,
+      "quranic_text": "وَمِنَ الْأَعْرَابِ مَن يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَيَتَّخِذُ مَا يُنفِقُ قُرُبَاتٍ عِندَ اللَّهِ وَصَلَوَاتِ الرَّسُولِ ۚ أَلَا إِنَّهَا قُرْبَةٌ لَّهُمْ ۚ سَيُدْخِلُهُمُ اللَّهُ فِي رَحْمَتِهِ ۗ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ومن الأعراب من يؤمن بالله واليوم الآخر ويتخذ ما ينفق قربات عند الله وصلوات الرسول ألا إنها قربة لهم سيدخلهم الله في رحمته إن الله غفور رحيم",
+      "arabic_lemmatized": "من عربي من آمن الله يوم آخر اتخذ ما أنفق قرب عند الله صلاة رسول أن إن قربة ل أدخل الله في رحمة إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "عربي آمن الله يوم آخر أنفق قرب الله صلاة رسول قربة أدخل الله رحمة الله غفور رحيم",
+      "translation": "Yet among the Desert-Arabs are those who believe in God and the Last Day, and consider their contribution to be a means towards God, and the prayers of the Messenger. Surely it will draw them closer, and God will admit them into His mercy. God is Forgiving and Compassionate.",
+      "similarity": 0.4642383454426297
+    },
+    
+    { 
+      "surah_number": 3, 
+      "aya_number": 31,
+      "quranic_text": "قُلْ إِن كُنتُمْ تُحِبُّونَ اللَّهَ فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ ۗ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "قل إن كنتم تحبون الله فاتبعوني يحببكم الله ويغفر لكم ذنوبكم والله غفور رحيم",
+      "arabic_lemmatized": "قال إن كان أحب الله فاتبعوني أحب الله غفر ل ذنب الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "قال أحب الله فاتبعوني أحب الله غفر ذنب الله غفور رحيم",
+      "translation": "Say, &ldquo;If you love God, then follow me, and God will love you, and will forgive you your sins.&rdquo; God is Forgiving and Merciful.",
+      "similarity": 0.4588314677411235
+    },
+    
+    { 
+      "surah_number": 8, 
+      "aya_number": 69,
+      "quranic_text": "فَكُلُوا مِمَّا غَنِمْتُمْ حَلَالًا طَيِّبًا ۚ وَاتَّقُوا اللَّهَ ۚ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "فكلوا مما غنمتم حلالا طيبا واتقوا الله إن الله غفور رحيم",
+      "arabic_lemmatized": "أكل من غنم حلال طيب اتقى الله إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "أكل غنم حلال طيب اتقى الله الله غفور رحيم",
+      "translation": "So consume what you have gained, legitimate and wholesome; and remain conscious of God. God is Forgiving and Merciful.",
+      "similarity": 0.45226701686664544
+    },
+    
+    { 
+      "surah_number": 3, 
+      "aya_number": 89,
+      "quranic_text": "إِلَّا الَّذِينَ تَابُوا مِن بَعْدِ ذَٰلِكَ وَأَصْلَحُوا فَإِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إلا الذين تابوا من بعد ذلك وأصلحوا فإن الله غفور رحيم",
+      "arabic_lemmatized": "إلا الذي تاب من بعد ذلك أصلح إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "تاب أصلح الله غفور رحيم",
+      "translation": "Except those who repent afterwards, and reform; for God is Forgiving and Merciful.",
+      "similarity": 0.4472135954999579
+    },
+    
+    { 
+      "surah_number": 16, 
+      "aya_number": 74,
+      "quranic_text": "فَلَا تَضْرِبُوا لِلَّهِ الْأَمْثَالَ ۚ إِنَّ اللَّهَ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ",		
+      "minimal": "فلا تضربوا لله الأمثال إن الله يعلم وأنتم لا تعلمون",
+      "arabic_lemmatized": "لا ضرب الله مثل إن الله علم أنتم لا علم",
+      "arabic_lemmatized_without_stop_words": "ضرب الله الله",
+      "translation": "So do not cite the examples for God. God knows, and you do not know.",
+      "similarity": 0.4472135954999579
+    },
+    
+    { 
+      "surah_number": 24, 
+      "aya_number": 5,
+      "quranic_text": "إِلَّا الَّذِينَ تَابُوا مِن بَعْدِ ذَٰلِكَ وَأَصْلَحُوا فَإِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إلا الذين تابوا من بعد ذلك وأصلحوا فإن الله غفور رحيم",
+      "arabic_lemmatized": "إلا الذي تاب من بعد ذلك أصلح إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "تاب أصلح الله غفور رحيم",
+      "translation": "Except for those who repent afterwards, and reform; for God is Forgiving and Merciful.",
+      "similarity": 0.4472135954999579
+    },
+    
+    { 
+      "surah_number": 49, 
+      "aya_number": 5,
+      "quranic_text": "وَلَوْ أَنَّهُمْ صَبَرُوا حَتَّىٰ تَخْرُجَ إِلَيْهِمْ لَكَانَ خَيْرًا لَّهُمْ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ولو أنهم صبروا حتى تخرج إليهم لكان خيرا لهم والله غفور رحيم",
+      "arabic_lemmatized": "لو أن صبر حتى خرج إلى كان خير ل الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "خرج خير الله غفور رحيم",
+      "translation": "Had they remained patient until you came out to them, it would have been better for them. But God is Forgiving and Merciful.",
+      "similarity": 0.4472135954999579
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 100,
+      "quranic_text": "وَمَن يُهَاجِرْ فِي سَبِيلِ اللَّهِ يَجِدْ فِي الْأَرْضِ مُرَاغَمًا كَثِيرًا وَسَعَةً ۚ وَمَن يَخْرُجْ مِن بَيْتِهِ مُهَاجِرًا إِلَى اللَّهِ وَرَسُولِهِ ثُمَّ يُدْرِكْهُ الْمَوْتُ فَقَدْ وَقَعَ أَجْرُهُ عَلَى اللَّهِ ۗ وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا",		
+      "minimal": "ومن يهاجر في سبيل الله يجد في الأرض مراغما كثيرا وسعة ومن يخرج من بيته مهاجرا إلى الله ورسوله ثم يدركه الموت فقد وقع أجره على الله وكان الله غفورا رحيما",
+      "arabic_lemmatized": "من هاجر في سبيل الله وجد في أرض مراغم كثير سعة من خرج من بيت مهاجر إلى الله رسول ثم أدرك موت قد وقع أجر على الله كان الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "هاجر سبيل الله أرض مراغم كثير سعة خرج بيت مهاجر الله رسول أدرك موت وقع أجر الله الله غفور رحيم",
+      "translation": "Anyone who emigrates for the sake of God will find on earth many places of refuge, and plentitude. Anyone who leaves his home, emigrating to God and His Messenger, and then is overtaken by death, his compensation falls on God. God is Forgiver, Most Merciful.",
+      "similarity": 0.44194173824159216
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 152,
+      "quranic_text": "وَالَّذِينَ آمَنُوا بِاللَّهِ وَرُسُلِهِ وَلَمْ يُفَرِّقُوا بَيْنَ أَحَدٍ مِّنْهُمْ أُولَـٰئِكَ سَوْفَ يُؤْتِيهِمْ أُجُورَهُمْ ۗ وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا",		
+      "minimal": "والذين آمنوا بالله ورسله ولم يفرقوا بين أحد منهم أولئك سوف يؤتيهم أجورهم وكان الله غفورا رحيما",
+      "arabic_lemmatized": "الذي آمن الله رسول لم فرق بين أحد من أولائك سوف آتى أجر كان الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "آمن الله رسول فرق أولائك آتى أجر الله غفور رحيم",
+      "translation": "As for those who believe in God and His messengers, and make no distinction between any of them&mdash;He will give them their rewards. God is Forgiver and Merciful.",
+      "similarity": 0.43301270189221935
+    },
+    
+    { 
+      "surah_number": 5, 
+      "aya_number": 39,
+      "quranic_text": "فَمَن تَابَ مِن بَعْدِ ظُلْمِهِ وَأَصْلَحَ فَإِنَّ اللَّهَ يَتُوبُ عَلَيْهِ ۗ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "فمن تاب من بعد ظلمه وأصلح فإن الله يتوب عليه إن الله غفور رحيم",
+      "arabic_lemmatized": "من تاب من بعد ظلم أصلح إن الله تاب على إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "تاب ظلم أصلح الله تاب الله غفور رحيم",
+      "translation": "But whoever repents after his crime, and reforms, God will accept his repentance. God is Forgiving and Merciful.",
+      "similarity": 0.43301270189221935
+    },
+    
+    { 
+      "surah_number": 66, 
+      "aya_number": 1,
+      "quranic_text": "يَا أَيُّهَا النَّبِيُّ لِمَ تُحَرِّمُ مَا أَحَلَّ اللَّهُ لَكَ ۖ تَبْتَغِي مَرْضَاتَ أَزْوَاجِكَ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "يا أيها النبي لم تحرم ما أحل الله لك تبتغي مرضات أزواجك والله غفور رحيم",
+      "arabic_lemmatized": "يا أي نبي لم حرم ما أحل الله ل ابتغى مرض زوج الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "نبي حرم أحل الله ابتغى مرض زوج الله غفور رحيم",
+      "translation": "O prophet! Why do you prohibit what God has permitted for you, seeking to please your wives? God is Forgiving and Merciful.",
+      "similarity": 0.43301270189221935
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 64,
+      "quranic_text": "وَمَا أَرْسَلْنَا مِن رَّسُولٍ إِلَّا لِيُطَاعَ بِإِذْنِ اللَّهِ ۚ وَلَوْ أَنَّهُمْ إِذ ظَّلَمُوا أَنفُسَهُمْ جَاءُوكَ فَاسْتَغْفَرُوا اللَّهَ وَاسْتَغْفَرَ لَهُمُ الرَّسُولُ لَوَجَدُوا اللَّهَ تَوَّابًا رَّحِيمًا",		
+      "minimal": "وما أرسلنا من رسول إلا ليطاع بإذن الله ولو أنهم إذ ظلموا أنفسهم جاءوك فاستغفروا الله واستغفر لهم الرسول لوجدوا الله توابا رحيما",
+      "arabic_lemmatized": "ما أرسل من رسول إلا أطاع إذن الله لو أن إذ ظلم نفس جاء استغفر الله استغفر ل رسول وجد الله تواب رحيم",
+      "arabic_lemmatized_without_stop_words": "أرسل رسول أطاع الله ظلم جاء استغفر الله استغفر رسول الله تواب رحيم",
+      "translation": "We did not send any messenger except to be obeyed by God&rsquo;s leave. Had they, when they wronged themselves, come to you, and prayed for God&#039;s forgiveness, and the Messenger had prayed for their forgiveness, they would have found God Relenting and Merciful.",
+      "similarity": 0.41702882811414954
+    },
+    
+    { 
+      "surah_number": 33, 
+      "aya_number": 24,
+      "quranic_text": "لِّيَجْزِيَ اللَّهُ الصَّادِقِينَ بِصِدْقِهِمْ وَيُعَذِّبَ الْمُنَافِقِينَ إِن شَاءَ أَوْ يَتُوبَ عَلَيْهِمْ ۚ إِنَّ اللَّهَ كَانَ غَفُورًا رَّحِيمًا",		
+      "minimal": "ليجزي الله الصادقين بصدقهم ويعذب المنافقين إن شاء أو يتوب عليهم إن الله كان غفورا رحيما",
+      "arabic_lemmatized": "أجزى الله صادق صدق عذب منافق إن شاء أو تاب على إن الله كان غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "أجزى الله صادق صدق عذب منافق شاء تاب الله غفور رحيم",
+      "translation": "That God may reward the truthful for their truthfulness; and punish the hypocrites, if He wills, or pardon them. God is Forgiving and Merciful.",
+      "similarity": 0.41602514716892186
+    },
+    
+    { 
+      "surah_number": 39, 
+      "aya_number": 53,
+      "quranic_text": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ",		
+      "minimal": "قل يا عبادي الذين أسرفوا على أنفسهم لا تقنطوا من رحمة الله إن الله يغفر الذنوب جميعا إنه هو الغفور الرحيم",
+      "arabic_lemmatized": "قال يا عباد الذي أسرف على نفس لا قنط من رحمة الله إن الله غفر ذنب جميع إن هو غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "قال عباد أسرف قنط رحمة الله الله غفر ذنب غفور رحيم",
+      "translation": "Say, &ldquo;O My servants who have transgressed against themselves: do not despair of God&rsquo;s mercy, for God forgives all sins. He is indeed the Forgiver, the Clement.&rdquo;",
+      "similarity": 0.41602514716892186
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 96,
+      "quranic_text": "دَرَجَاتٍ مِّنْهُ وَمَغْفِرَةً وَرَحْمَةً ۚ وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا",		
+      "minimal": "درجات منه ومغفرة ورحمة وكان الله غفورا رحيما",
+      "arabic_lemmatized": "درجة من مغفرة رحمة كان الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "درجة مغفرة رحمة الله غفور رحيم",
+      "translation": "Degrees from Him, and forgiveness, and mercy. God is Forgiving and Merciful.",
+      "similarity": 0.4082482904638631
+    },
+    
+    { 
+      "surah_number": 5, 
+      "aya_number": 34,
+      "quranic_text": "إِلَّا الَّذِينَ تَابُوا مِن قَبْلِ أَن تَقْدِرُوا عَلَيْهِمْ ۖ فَاعْلَمُوا أَنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إلا الذين تابوا من قبل أن تقدروا عليهم فاعلموا أن الله غفور رحيم",
+      "arabic_lemmatized": "إلا الذي تاب من قبل أن قدر على اعلم أن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "تاب قدر اعلم الله غفور رحيم",
+      "translation": "Except for those who repent before you apprehend them. So know that God is Forgiving and Merciful.",
+      "similarity": 0.4082482904638631
+    },
+    
+    { 
+      "surah_number": 52, 
+      "aya_number": 43,
+      "quranic_text": "أَمْ لَهُمْ إِلَـٰهٌ غَيْرُ اللَّهِ ۚ سُبْحَانَ اللَّهِ عَمَّا يُشْرِكُونَ",		
+      "minimal": "أم لهم إله غير الله سبحان الله عما يشركون",
+      "arabic_lemmatized": "أم ل إله غير الله سبحان الله عن أشرك",
+      "arabic_lemmatized_without_stop_words": "إله الله الله أشرك",
+      "translation": "Or do they have a god besides God? God transcends what they associate.",
+      "similarity": 0.4082482904638631
+    },
+    
+    { 
+      "surah_number": 72, 
+      "aya_number": 18,
+      "quranic_text": "وَأَنَّ الْمَسَاجِدَ لِلَّهِ فَلَا تَدْعُوا مَعَ اللَّهِ أَحَدًا",		
+      "minimal": "وأن المساجد لله فلا تدعوا مع الله أحدا",
+      "arabic_lemmatized": "أن مسجد الله لا دعا مع الله أحد",
+      "arabic_lemmatized_without_stop_words": "مسجد الله دعا الله",
+      "translation": "The places of worship are for God. So do not call, besides God, upon anyone else.",
+      "similarity": 0.4082482904638631
+    },
+    
+    { 
+      "surah_number": 3, 
+      "aya_number": 129,
+      "quranic_text": "وَلِلَّهِ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۚ يَغْفِرُ لِمَن يَشَاءُ وَيُعَذِّبُ مَن يَشَاءُ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ولله ما في السماوات وما في الأرض يغفر لمن يشاء ويعذب من يشاء والله غفور رحيم",
+      "arabic_lemmatized": "الله ما في سماء ما في أرض غفر من شاء عذب من شاء الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "الله سماء أرض غفر شاء عذب شاء الله غفور رحيم",
+      "translation": "To God belongs everything in the heavens and the earth. He forgives whom He wills, and He punishes whom He wills. God is Most Forgiving, Most Merciful.",
+      "similarity": 0.4008918628686366
+    },
+    
+    { 
+      "surah_number": 4, 
+      "aya_number": 39,
+      "quranic_text": "وَمَاذَا عَلَيْهِمْ لَوْ آمَنُوا بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَأَنفَقُوا مِمَّا رَزَقَهُمُ اللَّهُ ۚ وَكَانَ اللَّهُ بِهِمْ عَلِيمًا",		
+      "minimal": "وماذا عليهم لو آمنوا بالله واليوم الآخر وأنفقوا مما رزقهم الله وكان الله بهم عليما",
+      "arabic_lemmatized": "ماذا على لو آمن الله يوم آخر أنفق من رزق الله كان الله ب عليم",
+      "arabic_lemmatized_without_stop_words": "آمن الله يوم آخر أنفق الله الله عليم",
+      "translation": "What would they have lost, had they believed in God and the Last Day, and gave out of what God has provided for them? God knows them very well.",
+      "similarity": 0.4008918628686366
+    },
+    
+    { 
+      "surah_number": 9, 
+      "aya_number": 91,
+      "quranic_text": "لَّيْسَ عَلَى الضُّعَفَاءِ وَلَا عَلَى الْمَرْضَىٰ وَلَا عَلَى الَّذِينَ لَا يَجِدُونَ مَا يُنفِقُونَ حَرَجٌ إِذَا نَصَحُوا لِلَّهِ وَرَسُولِهِ ۚ مَا عَلَى الْمُحْسِنِينَ مِن سَبِيلٍ ۚ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ليس على الضعفاء ولا على المرضى ولا على الذين لا يجدون ما ينفقون حرج إذا نصحوا لله ورسوله ما على المحسنين من سبيل والله غفور رحيم",
+      "arabic_lemmatized": "ليس على ضعيف لا على مريض لا على الذي لا وجد ما أنفق حرج إذا نصح الله رسول ما على محسن من سبيل الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "ضعيف مريض أنفق حرج نصح الله رسول محسن سبيل الله غفور رحيم",
+      "translation": "There is no blame on the weak, nor on the sick, nor on those who have nothing to give, provided they are true to God and His Messenger. In no way can the righteous be blamed. God is Forgiving and Merciful.",
+      "similarity": 0.4008918628686366
+    },
+    
+    { 
+      "surah_number": 16, 
+      "aya_number": 115,
+      "quranic_text": "إِنَّمَا حَرَّمَ عَلَيْكُمُ الْمَيْتَةَ وَالدَّمَ وَلَحْمَ الْخِنزِيرِ وَمَا أُهِلَّ لِغَيْرِ اللَّهِ بِهِ ۖ فَمَنِ اضْطُرَّ غَيْرَ بَاغٍ وَلَا عَادٍ فَإِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إنما حرم عليكم الميتة والدم ولحم الخنزير وما أهل لغير الله به فمن اضطر غير باغ ولا عاد فإن الله غفور رحيم",
+      "arabic_lemmatized": "إن حرم على ميتة دم لحم خنزير ما أهل غير الله ب من اضطر غير باغي لا عاد إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "حرم ميتة دم لحم خنزير أهل الله اضطر باغي الله غفور رحيم",
+      "translation": "He has forbidden you carrion, and blood, and the flesh of swine, and anything consecrated to other than God. But if anyone is compelled by necessity, without being deliberate or malicious, then God is Forgiving and Merciful.",
+      "similarity": 0.4008918628686366
+    },
+    
+    { 
+      "surah_number": 59, 
+      "aya_number": 4,
+      "quranic_text": "ذَٰلِكَ بِأَنَّهُمْ شَاقُّوا اللَّهَ وَرَسُولَهُ ۖ وَمَن يُشَاقِّ اللَّهَ فَإِنَّ اللَّهَ شَدِيدُ الْعِقَابِ",		
+      "minimal": "ذلك بأنهم شاقوا الله ورسوله ومن يشاق الله فإن الله شديد العقاب",
+      "arabic_lemmatized": "ذلك أن شاق الله رسول من يشاق الله إن الله شديد عقاب",
+      "arabic_lemmatized_without_stop_words": "شاق الله رسول يشاق الله الله شديد عقاب",
+      "translation": "That is because they opposed God and His Messenger. Whoever opposes God&mdash;God is stern in retribution.",
+      "similarity": 0.4008918628686366
+    },
+    
+    { 
+      "surah_number": 24, 
+      "aya_number": 22,
+      "quranic_text": "وَلَا يَأْتَلِ أُولُو الْفَضْلِ مِنكُمْ وَالسَّعَةِ أَن يُؤْتُوا أُولِي الْقُرْبَىٰ وَالْمَسَاكِينَ وَالْمُهَاجِرِينَ فِي سَبِيلِ اللَّهِ ۖ وَلْيَعْفُوا وَلْيَصْفَحُوا ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ اللَّهُ لَكُمْ ۗ وَاللَّهُ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "ولا يأتل أولو الفضل منكم والسعة أن يؤتوا أولي القربى والمساكين والمهاجرين في سبيل الله وليعفوا وليصفحوا ألا تحبون أن يغفر الله لكم والله غفور رحيم",
+      "arabic_lemmatized": "لا يأتل أولو فضل من سعة أن آتى أولى قربى مسكين مهاجر في سبيل الله عف وليصفحوا أن أحب أن غفر الله ل الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "يأتل أولو فضل سعة آتى أولى قربى مسكين مهاجر سبيل الله عف وليصفحوا أحب غفر الله الله غفور رحيم",
+      "translation": "Those of you who have affluence and means should not refuse to give to the relatives, and the needy, and the emigrants for the sake of God. And let them pardon, and let them overlook. Do you not love for God to pardon you? God is All-Forgiving, Most Merciful.",
+      "similarity": 0.4
+    },
+    
+    { 
+      "surah_number": 33, 
+      "aya_number": 73,
+      "quranic_text": "لِّيُعَذِّبَ اللَّهُ الْمُنَافِقِينَ وَالْمُنَافِقَاتِ وَالْمُشْرِكِينَ وَالْمُشْرِكَاتِ وَيَتُوبَ اللَّهُ عَلَى الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ ۗ وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا",		
+      "minimal": "ليعذب الله المنافقين والمنافقات والمشركين والمشركات ويتوب الله على المؤمنين والمؤمنات وكان الله غفورا رحيما",
+      "arabic_lemmatized": "عذب الله منافق منافق مشرك مشرك تاب الله على مؤمن مؤمن كان الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "عذب الله منافق منافق مشرك مشرك تاب الله مؤمن مؤمن الله غفور رحيم",
+      "translation": "God will punish the hypocrites, men and women, and the idolaters, men and women. And God will redeem the believers, men and women. God is Ever-Forgiving, Most Merciful.",
+      "similarity": 0.4
+    },
+    
+    { 
+      "surah_number": 73, 
+      "aya_number": 20,
+      "quranic_text": "إِنَّ رَبَّكَ يَعْلَمُ أَنَّكَ تَقُومُ أَدْنَىٰ مِن ثُلُثَيِ اللَّيْلِ وَنِصْفَهُ وَثُلُثَهُ وَطَائِفَةٌ مِّنَ الَّذِينَ مَعَكَ ۚ وَاللَّهُ يُقَدِّرُ اللَّيْلَ وَالنَّهَارَ ۚ عَلِمَ أَن لَّن تُحْصُوهُ فَتَابَ عَلَيْكُمْ ۖ فَاقْرَءُوا مَا تَيَسَّرَ مِنَ الْقُرْآنِ ۚ عَلِمَ أَن سَيَكُونُ مِنكُم مَّرْضَىٰ ۙ وَآخَرُونَ يَضْرِبُونَ فِي الْأَرْضِ يَبْتَغُونَ مِن فَضْلِ اللَّهِ ۙ وَآخَرُونَ يُقَاتِلُونَ فِي سَبِيلِ اللَّهِ ۖ فَاقْرَءُوا مَا تَيَسَّرَ مِنْهُ ۚ وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَأَقْرِضُوا اللَّهَ قَرْضًا حَسَنًا ۚ وَمَا تُقَدِّمُوا لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ اللَّهِ هُوَ خَيْرًا وَأَعْظَمَ أَجْرًا ۚ وَاسْتَغْفِرُوا اللَّهَ ۖ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إن ربك يعلم أنك تقوم أدنى من ثلثي الليل ونصفه وثلثه وطائفة من الذين معك والله يقدر الليل والنهار علم أن لن تحصوه فتاب عليكم فاقرءوا ما تيسر من القرآن علم أن سيكون منكم مرضى وآخرون يضربون في الأرض يبتغون من فضل الله وآخرون يقاتلون في سبيل الله فاقرءوا ما تيسر منه وأقيموا الصلاة وآتوا الزكاة وأقرضوا الله قرضا حسنا وما تقدموا لأنفسكم من خير تجدوه عند الله هو خيرا وأعظم أجرا واستغفروا الله إن الله غفور رحيم",
+      "arabic_lemmatized": "إن رب علم أن قام أدنى من ثلث ليل نصف ثلث طائفة من الذي مع الله قدر ليل نهار علم أن لن أحصى تاب على فاقرءوا ما تيسر من قرآن علم أن كان من مريض آخر ضرب في أرض ابتغى من فضل الله آخر قاتل في سبيل الله فاقرءوا ما تيسر من أقام صلاة آتى زكاة أقرض الله قرض حسن ما تقدم نفس من خير وجد عند الله هو خير أعظم أجر استغفر الله إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "رب أدنى ثلث ليل نصف ثلث طائفة الله قدر ليل نهار أحصى تاب فاقرءوا تيسر قرآن مريض آخر ضرب أرض ابتغى فضل الله آخر قاتل سبيل الله فاقرءوا تيسر أقام صلاة آتى زكاة أقرض الله قرض حسن تقدم خير الله خير أعظم أجر استغفر الله الله غفور رحيم",
+      "translation": "Your Lord knows that you stay up nearly two-thirds of the night, or half of it, or one-third of it, along with a group of those with you. God designed the night and the day. He knows that you are unable to sustain it, so He has pardoned you. So read of the Quran what is possible for you. He knows that some of you may be ill; and others travelling through the land, seeking God&rsquo;s bounty; and others fighting in God&rsquo;s cause. So read of it what is possible for you, and observe the prayers, and give regular charity, and lend God a generous loan. Whatever good you advance for yourselves, you will find it with God, better and generously rewarded. And seek God&rsquo;s forgiveness, for God is Forgiving and Merciful.",
+      "similarity": 0.39605901719066977
+    },
+    
+    { 
+      "surah_number": 9, 
+      "aya_number": 59,
+      "quranic_text": "وَلَوْ أَنَّهُمْ رَضُوا مَا آتَاهُمُ اللَّهُ وَرَسُولُهُ وَقَالُوا حَسْبُنَا اللَّهُ سَيُؤْتِينَا اللَّهُ مِن فَضْلِهِ وَرَسُولُهُ إِنَّا إِلَى اللَّهِ رَاغِبُونَ",		
+      "minimal": "ولو أنهم رضوا ما آتاهم الله ورسوله وقالوا حسبنا الله سيؤتينا الله من فضله ورسوله إنا إلى الله راغبون",
+      "arabic_lemmatized": "لو أن رضي ما آتى الله رسول قال حسب الله سيؤتينا الله من فضل رسول إن إلى الله راغب",
+      "arabic_lemmatized_without_stop_words": "رضي آتى الله رسول قال الله سيؤتينا الله فضل رسول الله راغب",
+      "translation": "If only they were content with what God and His Messenger have given them, and said, &ldquo;God is sufficient for us; God will give us of His bounty, and so will His Messenger; to God we eagerly turn.&rdquo;",
+      "similarity": 0.3922322702763681
+    },
+    
+    { 
+      "surah_number": 2, 
+      "aya_number": 165,
+      "quranic_text": "وَمِنَ النَّاسِ مَن يَتَّخِذُ مِن دُونِ اللَّهِ أَندَادًا يُحِبُّونَهُمْ كَحُبِّ اللَّهِ ۖ وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِّلَّهِ ۗ وَلَوْ يَرَى الَّذِينَ ظَلَمُوا إِذْ يَرَوْنَ الْعَذَابَ أَنَّ الْقُوَّةَ لِلَّهِ جَمِيعًا وَأَنَّ اللَّهَ شَدِيدُ الْعَذَابِ",		
+      "minimal": "ومن الناس من يتخذ من دون الله أندادا يحبونهم كحب الله والذين آمنوا أشد حبا لله ولو يرى الذين ظلموا إذ يرون العذاب أن القوة لله جميعا وأن الله شديد العذاب",
+      "arabic_lemmatized": "من ناس من اتخذ من دون الله ند أحب حب الله الذي آمن أشد حب الله لو رأى الذي ظلم إذ رأى عذاب أن قوة الله جميع أن الله شديد عذاب",
+      "arabic_lemmatized_without_stop_words": "ناس الله ند أحب حب الله آمن أشد حب الله ظلم عذاب قوة الله الله شديد عذاب",
+      "translation": "Yet among the people are those who take other than God as equals to Him. They love them as the love of God. But those who believe have greater love for God. If only the wrongdoers would realize, when they see the torment; that all power is God&rsquo;s, and that God is severe in punishment.",
+      "similarity": 0.3904344047215152
+    },
+    
+    { 
+      "surah_number": 2, 
+      "aya_number": 115,
+      "quranic_text": "وَلِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ ۚ فَأَيْنَمَا تُوَلُّوا فَثَمَّ وَجْهُ اللَّهِ ۚ إِنَّ اللَّهَ وَاسِعٌ عَلِيمٌ",		
+      "minimal": "ولله المشرق والمغرب فأينما تولوا فثم وجه الله إن الله واسع عليم",
+      "arabic_lemmatized": "الله مشرق مغرب أينما تولى ثم وجه الله إن الله واسع عليم",
+      "arabic_lemmatized_without_stop_words": "الله مشرق مغرب تولى وجه الله الله واسع عليم",
+      "translation": "To God belong the East and the West. Whichever way you turn, there is God&rsquo;s presence. God is Omnipresent and Omniscient.",
+      "similarity": 0.3872983346207417
+    },
+    
+    { 
+      "surah_number": 2, 
+      "aya_number": 173,
+      "quranic_text": "إِنَّمَا حَرَّمَ عَلَيْكُمُ الْمَيْتَةَ وَالدَّمَ وَلَحْمَ الْخِنزِيرِ وَمَا أُهِلَّ بِهِ لِغَيْرِ اللَّهِ ۖ فَمَنِ اضْطُرَّ غَيْرَ بَاغٍ وَلَا عَادٍ فَلَا إِثْمَ عَلَيْهِ ۚ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",		
+      "minimal": "إنما حرم عليكم الميتة والدم ولحم الخنزير وما أهل به لغير الله فمن اضطر غير باغ ولا عاد فلا إثم عليه إن الله غفور رحيم",
+      "arabic_lemmatized": "إن حرم على ميتة دم لحم خنزير ما أهل ب غير الله من اضطر غير باغي لا عاد لا إثم على إن الله غفور رحيم",
+      "arabic_lemmatized_without_stop_words": "حرم ميتة دم لحم خنزير أهل الله اضطر باغي إثم الله غفور رحيم",
+      "translation": "He has forbidden you carrion, and blood, and the flesh of swine, and what was dedicated to other than God. But if anyone is compelled, without desiring or exceeding, he commits no sin. God is Forgiving and Merciful.",
+      "similarity": 0.3872983346207417
+    },
+    
+    { 
+      "surah_number": 8, 
+      "aya_number": 10,
+      "quranic_text": "وَمَا جَعَلَهُ اللَّهُ إِلَّا بُشْرَىٰ وَلِتَطْمَئِنَّ بِهِ قُلُوبُكُمْ ۚ وَمَا النَّصْرُ إِلَّا مِنْ عِندِ اللَّهِ ۚ إِنَّ اللَّهَ عَزِيزٌ حَكِيمٌ",		
+      "minimal": "وما جعله الله إلا بشرى ولتطمئن به قلوبكم وما النصر إلا من عند الله إن الله عزيز حكيم",
+      "arabic_lemmatized": "ما جعل الله إلا بشرة لتطمئن ب قلب ما نصر إلا من عند الله إن الله عزيز حكيم",
+      "arabic_lemmatized_without_stop_words": "الله بشرة لتطمئن قلب نصر الله الله عزيز حكيم",
+      "translation": "God only made it a message of hope, and to set your hearts at rest. Victory comes only from God. God is Mighty and Wise.",
+      "similarity": 0.3872983346207417
+    }
+  ]
+  }
