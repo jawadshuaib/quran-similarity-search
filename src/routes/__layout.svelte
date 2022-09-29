@@ -7,6 +7,9 @@
 	import SettingsBar from '../components/Navigation/SettingsBar.svelte';
 	import Nav from '../components/Navigation/Nav.svelte';
 	import Transition from '../components/Transition.svelte';
+
+	// Scripts
+	import { envVariables } from '../scripts/env-variables';
 </script>
 
 <svelte:head><title>Linguistic Analysis of the Quran</title></svelte:head>
@@ -14,7 +17,7 @@
 <DevMode />
 <div
 	class="bg-cover lg:h-80 md:h-60 sm:h-28 h-10 w-full shadow-lg hue-rotate-30"
-	style="background-image: url('pattern-alhambra.jpeg')"
+	style="background-image: url('{envVariables.imageProxy}/pattern-alhambra.jpeg')"
 />
 <div class="p-8 max-w-6xl mx-auto bg-white">
 	<Nav />

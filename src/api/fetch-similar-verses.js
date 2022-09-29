@@ -35,7 +35,7 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 */
 
 const similarVerses = async (options) => { 
-
+	
 	const url = options.surahNumber == 1 && options.ayaNumber == 1 ? `/json/1:1.json` : `${baseURL}/similar.php?translation=${options.translationId}&surah_number=${options.surahNumber}&aya_number=${options.ayaNumber}&method=${options.method}`;    	
 
   try {

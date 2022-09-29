@@ -1,3 +1,8 @@
+<script>
+	// Scripts
+	import { envVariables } from '../scripts/env-variables';
+</script>
+
 <svelte:head><title>About Quran ML</title></svelte:head>
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">About</h1>
 <div class="gap-2 py-2 text-justify">
@@ -20,7 +25,11 @@
 			holistic understanding of its message and meaning.
 		</p>
 		<div class="max-w-screen-lg">
-			<img src="screenshot-3.png" alt="Website architecture" class="mx-auto" />
+			<img
+				src="{envVariables.imageProxy}/screenshot-3.png"
+				alt="Website architecture"
+				class="mx-auto"
+			/>
 		</div>
 		<p class="mb-5">
 			I used a machine learning model known as <a

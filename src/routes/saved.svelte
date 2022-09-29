@@ -5,6 +5,7 @@
 	import verseInfo from '../api/fetch-verse-info';
 	// Common Scripts
 	import { areThereAnySavedVerses, getSavedVerses } from '../scripts/local-storage-scripts';
+	import { envVariables } from '../scripts/env-variables';
 	// Components
 	import Error from '../components/Utilities/Error.svelte';
 	import Verse from '../components/Verse.svelte';
@@ -75,6 +76,8 @@
 	<!-- Notice if there aren't any saved verses -->
 	{#if browser && !areThereAnySavedVerses()}
 		<Error {...defaultNote} />
-		<div class="text-center"><img src="./usage-1.png" alt="How to save verses" /></div>
+		<div class="text-center">
+			<img src="{envVariables.imageProxy}/usage-1.png" alt="How to save verses" />
+		</div>
 	{/if}
 </div>

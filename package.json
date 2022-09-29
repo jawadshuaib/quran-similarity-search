@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-visualizer",
+  "name": "quran-ml",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -24,6 +24,7 @@
   },
   "type": "module",
   "dependencies": {
-    "firebase": "^9.8.1"
+    "firebase": "^9.8.1",
+    "fs": "^0.0.1-security"
   }
 }
