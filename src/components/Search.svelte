@@ -142,7 +142,7 @@
 				search = example;
 				handleChange({ key: 'Enter' });
 			}}
-			class="text-slate-600 underline decoration-orange-400 hover:text-black hover:decoration-2 hover:cursor-pointer"
+			class="text-slate-600 underline underline-offset-2 decoration-orange-400 hover:text-black hover:decoration-2 hover:cursor-pointer"
 			>{example}</span
 		>
 		{#if idx < searchExamples.length - 1}

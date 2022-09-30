@@ -14,11 +14,10 @@
 
 	$: keywords,
 		((_) => {
-			if (keywords == '') {
+			if (keywords == '' || typeof keywords === 'object') {
 				return;
 			}
 
-			// keywords = !Array.isArray(keywords) ? keywords.split(',') : keywords;
 			keywords = keywords.split(',');
 
 			// Reset

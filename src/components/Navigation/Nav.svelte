@@ -54,18 +54,20 @@
 	<a
 		sveltekit:prefetch
 		href="/"
-		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Search</a
+		class="mr-2 sm:mr-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Search</a
 	>
 	<!-- Saved -->
 	<a
 		sveltekit:prefetch
 		href="/saved"
 		bind:this={elSaved}
-		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Saved</a
+		class="mr-2 sm:mr-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Saved</a
 	>
 	<!-- History -->
 	{#if showHistory}
-		<a href="/history" class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2"
+		<a
+			href="/history"
+			class="mr-2 sm:mr-4 text-lg hover:underline hover:decoration-orange-400 decoration-2"
 			>History</a
 		>
 	{/if}
@@ -73,12 +75,13 @@
 	<a
 		sveltekit:prefetch
 		href="/settings"
-		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">Settings</a
+		class="mr-2 sm:mr-4 text-lg hover:underline hover:decoration-orange-400 decoration-2"
+		>Settings</a
 	>
 	<!-- About -->
 	<a
 		sveltekit:prefetch
 		href="/about"
-		class="mx-4 text-lg hover:underline hover:decoration-orange-400 decoration-2">About</a
+		class="text-lg hover:underline hover:decoration-orange-400 decoration-2">About</a
 	>
 </nav>

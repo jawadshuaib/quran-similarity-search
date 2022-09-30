@@ -67,6 +67,7 @@
 		>
 			{decodeHtml(verse.translation)}
 		</div>
+		<!-- Surah:Verse -->
 		<div class="text-4xl my-1 text-slate-500 text-center font-cormorant">
 			{verse.surah_number}:{verse.aya_number}
 		</div>
@@ -115,7 +116,7 @@
 	<!-- Similar or Saved verses -->
 {:else if payloadType === 'similar' || payloadType === 'saved'}
 	<div
-		class="similar-verse grid grid-cols-12 py-4 my-2 border-2 border-slate-50 rounded items-center text-xl text-slate-800 hover:border-slate-200"
+		class="similar-verse grid grid-cols-12 py-4 my-2 md:border-2 border-slate-50 rounded items-center text-xl text-slate-800 hover:border-slate-200"
 	>
 		<div class="col-span-1 wrap-right">
 			<!-- Option for saving verses to local storage -->
@@ -160,14 +161,15 @@
 				>
 			</Link>
 		</div>
-		<div class="col-span-1 text-center">
+		<!-- Surah:Aya -->
+		<div class="col-span-2 md:col-span-1 text-center text-lg md:text-2xl">
 			{verse.surah_number}:{verse.aya_number}
 		</div>
-		<main class="col-span-10">
-			<div class="text-right px-5 text-2xl">
+		<main class="col-span-9 md:col-span-10">
+			<div class="text-right px-0 md:px-5 text-xl md:text-2xl">
 				{@html verse.quranic_text}
 			</div>
-			<div class="my-2 px-5">{decodeHtml(verse.translation)}</div>
+			<div class="my-2 px-10 md:px-5 text-sm md:text-2xl">{decodeHtml(verse.translation)}</div>
 		</main>
 	</div>
 {/if}

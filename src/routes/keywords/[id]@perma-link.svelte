@@ -37,6 +37,7 @@
 
 	export let keywords;
 	keywords = keywords.split(',').reverse().join(); // Reverse order from right to left
+
 	// Assign to another variable to prevent reactivity
 	// We don't want the list of keywords to disappear each time the user de-selects a keyword
 	let fixedKeywords = keywords;
