@@ -17,7 +17,7 @@
 <DevMode />
 <div
 	class="bg-cover lg:h-80 md:h-60 sm:h-28 h-10 w-full shadow-lg"
-	style="background-image: url('{envVariables.imageProxy}/pattern-mosque.jpeg')"
+	style="background-image: url('{envVariables.imageProxy}/pattern-mosque.webp')"
 />
 
 <div class="p-8 max-w-6xl mx-auto bg-white">

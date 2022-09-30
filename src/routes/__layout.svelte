@@ -17,7 +17,7 @@
 <DevMode />
 <div
 	class="bg-cover lg:h-80 md:h-60 sm:h-28 h-10 w-full shadow-lg hue-rotate-30"
-	style="background-image: url('{envVariables.imageProxy}/pattern-alhambra.jpeg')"
+	style="background-image: url('{envVariables.imageProxy}/pattern-alhambra.webp')"
 />
 <div class="p-8 max-w-6xl mx-auto bg-white">
 	<Nav />
