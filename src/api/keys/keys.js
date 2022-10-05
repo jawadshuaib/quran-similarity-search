@@ -1,0 +1,2 @@
+const GOOGLE_TRANSLATE_API_KEY = 'AIzaSyCnf4YOpN_lGUIiswhBBjTBfX5EAid-s-c';
+export { GOOGLE_TRANSLATE_API_KEY };

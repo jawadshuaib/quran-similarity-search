@@ -18,7 +18,11 @@
 
 	import translate from '../api/google-translate';
 	translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((json) => {
-		console.log(json.translatedText);
+		try {
+			console.log(json.translatedText);
+		} catch {
+			console.log('Error with translation');
+		}
 	});
 </script>
 

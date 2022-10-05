@@ -1,8 +1,8 @@
-const API_KEY = process.env.GOOGLE_TRANSLATE_API_KEY; 
+import { GOOGLE_TRANSLATE_API_KEY } from "./keys/keys";
 
 const translate = async (text) => {   
   
-  const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}&q=${text}&target=en`;  
+  const url = `https://translation.googleapis.com/language/translate/v2?key=${GOOGLE_TRANSLATE_API_KEY}&q=${text}&target=en`;  
 
   try {
     const response = await fetch(url);
