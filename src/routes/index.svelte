@@ -15,6 +15,11 @@
 			heading = ''; //'Search a Verse in the Quran';
 		}
 	});
+
+	import translate from '../api/google-translate';
+	translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((json) => {
+		console.log(json.translatedText);
+	});
 </script>
 
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Search</h1>
