@@ -17,13 +17,11 @@
 	});
 
 	import translate from '../api/google-translate';
-	translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((json) => {
-		try {
+	try {
+		translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((json) => {
 			console.log(json.translatedText);
-		} catch {
-			console.log('Error with translation');
-		}
-	});
+		});
+	} catch {}
 </script>
 
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Search</h1>
