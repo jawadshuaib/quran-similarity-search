@@ -84,6 +84,6 @@
 	<a
 		sveltekit:prefetch
 		href="/about"
-		class="text-lg hover:underline hover:decoration-orange-400 decoration-2">About</a
+		class="text-lg lg:mx-4 hover:underline hover:decoration-orange-400 decoration-2">About</a
 	>
 </nav>
