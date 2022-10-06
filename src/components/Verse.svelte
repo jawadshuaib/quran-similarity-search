@@ -25,26 +25,6 @@
 	let linkTitle = '';
 	let bookmarkColor = '';
 
-	function deselectText() {
-		tooltip = '';
-	}
-
-	function getTranslation() {
-		const selectedText = getSelectedText();
-
-		if (selectedText !== null) {
-			try {
-				translate(selectedText).then((translated) => {
-					tooltip = translated;
-				});
-			} catch {
-				console.log('There was a problem calling the translation API');
-			}
-		} else {
-			tooltip = '';
-		}
-	}
-
 	// Execute the following whenever verse changes
 	$: verse,
 		((_) => {
@@ -80,9 +60,30 @@
 			areThereAnySavedVerses() && didSaveVerse(true);
 		}
 	}
+
+	// Reset tooltip text when user clicks anywhere
+	function resetTooltip() {
+		tooltip = '';
+	}
+
+	function getTranslation() {
+		const selectedText = getSelectedText();
+
+		if (selectedText !== null) {
+			try {
+				translate(selectedText).then((translated) => {
+					tooltip = translated;
+				});
+			} catch {
+				console.log('There was a problem calling the translation API');
+			}
+		} else {
+			tooltip = '';
+		}
+	}
 </script>
 
-<div on:click={deselectText}>
+<div on:click={resetTooltip}>
 	<!-- Search verse (can be from a route as well, i.e. /surah/1:1) -->
 	{#if payloadType === 'searched'}
 		<div class="main-quote py-4 my-2 border-2 border-slate-50 bg-amber-50 rounded items-center">

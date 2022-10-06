@@ -4,7 +4,7 @@ const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoi
 
 const translate = async (text) => {   
     
-  const url = `${baseURL}/google-translate.php?text=${text}`;
+  const url = `${baseURL}/google-translate.php?text=${text.trim()}`;
   console.log(url);
   try {
     const response = await fetch(url);

@@ -3,15 +3,16 @@
 	let isHovered = false;
 	let x;
 	let y;
+	const offset = 15;
 
 	function mouseOver(event) {
 		isHovered = true;
-		x = event.pageX + 5;
-		y = event.pageY + 5;
+		x = event.pageX + offset;
+		y = event.pageY + offset;
 	}
 	function mouseMove(event) {
-		x = event.pageX + 5;
-		y = event.pageY + 5;
+		x = event.pageX + offset;
+		y = event.pageY + offset;
 	}
 	function mouseLeave() {
 		isHovered = false;
@@ -31,7 +32,8 @@
 	.tooltip {
 		border: 1px solid #ddd;
 		box-shadow: 1px 1px 1px #ddd;
-		background: white;
+		background: black;
+		color: white;
 		border-radius: 4px;
 		padding: 4px;
 		position: absolute;
