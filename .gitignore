@@ -10,3 +10,5 @@ node_modules
 .output
 # Local Netlify folder
 .netlify
+keys.js
+/keys
