@@ -18,8 +18,8 @@
 
 	import translate from '../api/google-translate';
 	try {
-		translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((json) => {
-			console.log(json.translatedText);
+		translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((translated) => {
+			console.log(translated);
 		});
 	} catch {}
 </script>

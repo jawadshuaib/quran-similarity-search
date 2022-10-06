@@ -1,11 +1,11 @@
-import { GOOGLE_TRANSLATE_API_KEY } from "./keys/keys";
+import { envVariables } from '../scripts/env-variables';
+
+const baseURL = `${envVariables.isDeveloperMode ? envVariables.isDeveloperEndPoint : envVariables.corsAnywhereProxy + envVariables.isProductionEndPoint}`;
 
 const translate = async (text) => {   
-  
-  // -- Provide API Key from Google Cloud -- //
-  const API_KEY = GOOGLE_TRANSLATE_API_KEY;
-  const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}&q=${text}&target=en`;  
-  
+    
+  const url = `${baseURL}/google-translate.php?text=${text}`;
+  console.log(url);
   try {
     const response = await fetch(url);
     const json = await response.json();
@@ -13,10 +13,8 @@ const translate = async (text) => {
     if (json.error !== undefined) {
       throw new Error(json.error.message);
     }
-      
-    return {      
-      translatedText: json.data.translations[0].translatedText
-    };
+    console.log(json);  
+    return json.translated;
   }
   catch (error) {  
     return { error }
