@@ -17,6 +17,15 @@ function isNumberKey(str) {
   return true;
 }
 
+// Selected or highlighted text
+function getSelectedText() {
+  let selectedText = null;
+  if (window.getSelection().toString().length) {
+    selectedText = window.getSelection().toString();
+  }
+  return selectedText;
+}
+
 // https://stackoverflow.com/questions/5224267/javascriptremove-arabic-text-diacritic-dynamically
 function removeTashkeel(s) {
   return s.replace(/[ؐ-ًؕ-ٖٓ-ٟۖ-ٰٰۭ]/g, '');
@@ -67,4 +76,4 @@ const translationMethodsAvailable = [
 ]
 
 // export { areThereAnySavedVerses, isVerseSaved, getSavedVerses, saveVerse, removeVerse, getSearchFromLocalStorage, saveSearchToLocalStorage, decodeHtml, isNumberKey };
-export { arrayIncludesArray, decodeHtml, isNumberKey, removeTashkeel, isArabic, translationMethodsAvailable, translations };
+export { getSelectedText, arrayIncludesArray, decodeHtml, isNumberKey, removeTashkeel, isArabic, translationMethodsAvailable, translations };

@@ -2,8 +2,12 @@
 	// Internal
 	import Link from 'svelte-link';
 	import { browser } from '$app/env';
+	// API
+	import translate from '../api/google-translate';
+	// Components
+	import Tooltip from './Tooltip.svelte';
 	// Scripts
-	import { decodeHtml } from '../scripts/common-scripts';
+	import { decodeHtml, getSelectedText } from '../scripts/common-scripts';
 	import {
 		areThereAnySavedVerses,
 		isVerseSaved,
@@ -17,8 +21,26 @@
 	export let verse;
 	export let payloadType;
 
+	let tooltip = '';
 	let linkTitle = '';
 	let bookmarkColor = '';
+
+	function getTranslation() {
+		const selectedText = getSelectedText();
+
+		if (selectedText !== null) {
+			try {
+				translate(selectedText).then((translated) => {
+					tooltip = translated;
+				});
+			} catch {
+				console.log('There was a problem calling the translation API');
+			}
+		} else {
+			tooltip = '';
+		}
+	}
+
 	// Execute the following whenever verse changes
 	$: verse,
 		((_) => {
@@ -59,9 +81,14 @@
 <!-- Search verse (can be from a route as well, i.e. /surah/1:1) -->
 {#if payloadType === 'searched'}
 	<div class="main-quote py-4 my-2 border-2 border-slate-50 bg-amber-50 rounded items-center">
-		<div class="my-2 text-3xl px-5 text-slate-700 text-center font-cormorant">
-			{verse.quranic_text}
-		</div>
+		<Tooltip title={tooltip}>
+			<div
+				on:mouseup={getTranslation}
+				class="my-2 text-3xl px-5 text-slate-700 text-center font-cormorant"
+			>
+				{verse.quranic_text}
+			</div>
+		</Tooltip>
 		<div
 			class="my-2 text-3xl px-5 text-slate-600 text-center underline decoration-wavy  decoration-sky-100 font-cormorant"
 		>
@@ -166,9 +193,11 @@
 			{verse.surah_number}:{verse.aya_number}
 		</div>
 		<main class="col-span-9 md:col-span-10">
-			<div class="text-right px-0 md:px-5 text-xl md:text-2xl">
-				{@html verse.quranic_text}
-			</div>
+			<Tooltip title={tooltip}>
+				<div on:mouseup={getTranslation} class="text-right px-0 md:px-5 text-xl md:text-2xl">
+					{@html verse.quranic_text}
+				</div>
+			</Tooltip>
 			<div class="my-2 px-10 md:px-5 text-sm md:text-2xl">{decodeHtml(verse.translation)}</div>
 		</main>
 	</div>
