@@ -16,12 +16,12 @@
 		}
 	});
 
-	import translate from '../api/google-translate';
-	try {
-		translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((translated) => {
-			console.log(translated);
-		});
-	} catch {}
+	// import translate from '../api/google-translate';
+	// try {
+	// 	translate('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي').then((translated) => {
+	// 		console.log(translated);
+	// 	});
+	// } catch {}
 </script>
 
 <h1 class="sm:text-3xl text-2xl text-center my-8 uppercase">Search</h1>
