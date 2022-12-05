@@ -1,5 +1,5 @@
 const envVariables = {  
-  isDeveloperMode: true,
+  isDeveloperMode: false,
   corsAnywhereProxy: '',
   // corsAnywhereProxy: 'https://glacial-brushlands-90091.herokuapp.com/',
   isDeveloperEndPoint: 'http://localhost/quran/api',
