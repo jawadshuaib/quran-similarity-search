@@ -1,6 +1,7 @@
 const envVariables = {  
   isDeveloperMode: false,
-  corsAnywhereProxy: 'https://glacial-brushlands-90091.herokuapp.com/',
+  corsAnywhereProxy: '',
+  //corsAnywhereProxy: 'https://glacial-brushlands-90091.herokuapp.com/',
   isDeveloperEndPoint: 'http://localhost/quran/api',
   isProductionEndPoint: 'http://18.220.86.213/api',
   imageProxy: 'https://quran-ml.netlify.app'
