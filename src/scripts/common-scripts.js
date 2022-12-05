@@ -1,11 +1,17 @@
+import { browser } from '$app/env';
+
 function arrayIncludesArray (arr1, arr2) {
   return arr1.some(r=> arr2.includes(r));
 }
 
 function decodeHtml(html) {
-  var txt = document.createElement('textarea');
-  txt.innerHTML = html;
-  return txt.value;
+  let v = null;
+  if (browser) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    v = txt.value;
+  }
+  return v;
 }
 
 // Checks for 0 to 9 digits and the character :
