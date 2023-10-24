@@ -1,6 +1,6 @@
 ## Discover Similar Verses in the Quran
 
-Link to web application: https://quran-ml.netlify.app/
+Link to web application: https://quran-ml.com/
 
 ![Alt text](static/screenshot-1.png?raw=true 'Screenshot of the front-end')
 
