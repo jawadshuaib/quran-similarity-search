@@ -4,7 +4,7 @@ The Quran is composed of 114 surahs (~chapters) and over 6000 ayas (~verses). Un
 
 This web application was built to help contextualize the various verses of the Quran. It can help others find linguistically similar verses in the Quran to help form a more holistic understanding of its message and meaning.
 
-This is the front-end portion of the app built using Svelte. The [back-end](quran-similarity-search-api) API and SQL database must also be executed for it to operate.
+This is the front-end portion of the app built using Svelte. The [back-end](https://github.com/jawadshuaib/quran-similarity-search-api) API and SQL database must also be executed for it to operate.
 
 ![Alt text](static/screenshot-1.png?raw=true 'Screenshot of the front-end')
 
