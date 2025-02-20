@@ -63,4 +63,4 @@ npm run preview
 
 ## Contact
 
-For any inquiries, please reach out to [Jawad Shuaib](jawad.php@gmail.com).
+For any inquiries, please reach out to [Jawad Shuaib](mailto:jawad.php@gmail.com).
